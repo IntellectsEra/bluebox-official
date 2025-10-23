@@ -1,0 +1,128 @@
+.reviews {
+  width: 100%;
+}
+
+.client-title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.reviews-grid-item {
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 0 20px 16px rgba(0, 0, 0, 0.1);
+  background:var(--color-white);
+}
+
+.reviews-grid-item img {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  border-radius: 20px;
+}
+
+.review-grid-customer {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: var(--color-white);
+  padding: 3rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-grid-customer img {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 10px solid var(--color-white);
+}
+
+.cutsomer-heading{
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.review-grid-customer .name {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-primary-black);
+  opacity: 0.6;
+}
+
+.review-grid-customer .desc {
+  margin: 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-primary-black);
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.ratings {
+  display: flex;
+  gap: 0.7rem;
+  font-size: 1.4rem;
+  color: #f6973f;
+  margin-top: 1rem;
+}
+
+.fifth-star {
+  opacity: 30%;
+}
+
+.arrow {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  background: white;
+  color: var(--color-primary-black);
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.arrow.left {
+  left: -2rem;
+}
+
+.arrow.right {
+  right: -2rem;
+}
+
+@media (max-width: 992px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}

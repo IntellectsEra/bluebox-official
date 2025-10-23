@@ -1,0 +1,116 @@
+.trending-product-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.trending-product-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.trending-product-title > p:first-of-type {
+  letter-spacing: 4px;
+  font-size: 1.4rem;
+  color: var(--color-secondary-gray);
+}
+
+.trending-product-title > p:last-of-type {
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--color-secondary-gray);
+}
+
+.trending-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.trending-product-grid-item {
+  width: 100%;
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+  border-radius: 1.25rem;
+  padding-bottom: 4rem;
+}
+
+.product-content {
+  padding-bottom: 3rem;
+}
+
+.product-action {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.5rem;
+  padding-top: 1rem;
+}
+
+.trending-product-grid-item img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  display: block;
+}
+
+.trending-product-grid-item .img1 {
+  background-color: #ece5de;
+}
+
+.trending-product-grid-item .img2,
+.trending-product-grid-item .img3 {
+  background-color: #f9f1e3;
+}
+
+.trending-product-grid-item .img4 {
+  background-color: #fffcf8;
+}
+
+.product-active {
+  background-color: var(--color-white);
+  border-left: 2px solid var(--color-white);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  margin: 2rem 0;
+}
+
+/* Responsive Grid */
+@media screen and (max-width: 1024px) {
+  .trending-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .trending-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .trending-product-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.image-padding {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+}
+
+.image-padding > img {
+  border-radius: 1.25rem;
+}
