@@ -29,33 +29,33 @@ const reviewsData = [
       'The Adjustable Door Stopper we chose from BluBox is sleek and functional. It keeps our corridor doors open at the perfect angle and blends well with modern interiors. Great value and elegant finish.',
     product: 'Adjustable Door Stopper',
   },
-  // {
-  //   img: '/assets/Reviews1.png',
-  //   country: 'USA',
-  //   name: 'Jessica Williams',
-  //   city: 'Seattle, WA',
-  //   review:
-  //     'I replaced my old knobs with the Classic Brass Drawer Pull from BluBox Enterprises. The polished brass makes my kitchen drawers pop in style—smooth installation and premium feel. Highly recommend.',
-  //   product: 'Classic Brass Drawer Pull',
-  // },
-  // {
-  //   img: '/assets/Reviews2.png',
-  //   country: 'USA',
-  //   name: 'Michael Brown',
-  //   city: 'Austin, TX',
-  //   review:
-  //     'Our lab racks now have BluBox’s Heavy-Duty Caster Wheels under them, and the mobility is outstanding. These wheels hold up under heavy equipment, move easily and have saved us time. Top choice.',
-  //   product: 'Heavy-Duty Caster Wheels',
-  // },
-  // {
-  //   img: '/assets/Reviews3.png',
-  //   country: 'USA',
-  //   name: 'Emily Johnson',
-  //   city: 'San Francisco, CA',
-  //   review:
-  //     'The Ganesh Golden Door Holder arrived from BluBox’s Indian facility and now graces our front door. The intricate craftsmanship and rich brass tone give our home a luxury look. Excellent product and service.',
-  //   product: 'Ganesh Golden Door Holder',
-  // },
+  {
+    img: '/assets/Reviews1.png',
+    country: 'USA',
+    name: 'Jessica Williams',
+    city: 'Seattle, WA',
+    review:
+      'I replaced my old knobs with the Classic Brass Drawer Pull from BluBox Enterprises. The polished brass makes my kitchen drawers pop in style—smooth installation and premium feel. Highly recommend.',
+    product: 'Classic Brass Drawer Pull',
+  },
+  {
+    img: '/assets/Reviews2.png',
+    country: 'USA',
+    name: 'Michael Brown',
+    city: 'Austin, TX',
+    review:
+      'Our lab racks now have BluBox’s Heavy-Duty Caster Wheels under them, and the mobility is outstanding. These wheels hold up under heavy equipment, move easily and have saved us time. Top choice.',
+    product: 'Heavy-Duty Caster Wheels',
+  },
+  {
+    img: '/assets/Reviews3.png',
+    country: 'USA',
+    name: 'Emily Johnson',
+    city: 'San Francisco, CA',
+    review:
+      'The Ganesh Golden Door Holder arrived from BluBox’s Indian facility and now graces our front door. The intricate craftsmanship and rich brass tone give our home a luxury look. Excellent product and service.',
+    product: 'Ganesh Golden Door Holder',
+  },
 ];
 const Reviews = () => {
   return (

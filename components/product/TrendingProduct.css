@@ -51,7 +51,7 @@
 
 .trending-product-grid-item img {
   width: 100%;
-  height: 25rem;
+  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -106,10 +106,10 @@
   }
 }
 
-.image-padding {
+/* .image-padding {
   padding: 1.5rem;
   border-radius: 1.25rem;
-}
+} */
 
 .image-padding > img {
   border-radius: 1.25rem;

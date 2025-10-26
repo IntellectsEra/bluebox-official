@@ -16,8 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Blubox - Enterprise',
-  description: 'Future-ready services designed to meet today’s Business needs ',
+  title:
+    'BluBox Enterprises | Premium Door & Window Fittings Hardware Exporter',
+  description:
+    'BluBox Enterprises specializes in high-quality door and window hardware, offering a comprehensive range of fittings for international construction projects. Explore our durable, precision-engineered products designed to meet global standards.',
 };
 
 export default function RootLayout({

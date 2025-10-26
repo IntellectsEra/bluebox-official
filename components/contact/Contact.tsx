@@ -77,13 +77,15 @@ export default function Contact() {
 
                   <div className='input-box'>
                     <label htmlFor='quantity'>
-                      Quantity<span style={{ color: '#FF1F1F' }}>*</span>
+                      Min. Order Quantity (MOQ)
+                      <span style={{ color: '#FF1F1F' }}>*</span>
                     </label>
                     <select name='quantity' id='quantity'>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                      <option>10</option>
+                      <option>20</option>
+                      <option>30</option>
+                      <option>40</option>
+                      <option>50</option>
                     </select>
                   </div>
                 </div>

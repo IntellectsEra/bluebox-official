@@ -8,23 +8,25 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Hero.css';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const slides = [
   {
     title: 'Strong Grip, Lasting Style',
-    subtitle: 'Handles That Blend Design And Strength',
+    subtitle: 'Handles that Blend Design and Strength',
   },
   {
-    title: 'Strong Grip, Lasting Style',
-    subtitle: 'Handles That Blend Design And Strength',
+    title: 'Roll Smooth, Last Long',
+    subtitle: 'Wheels that Move with Power',
   },
   {
-    title: 'Strong Grip, Lasting Style',
-    subtitle: 'Handles That Blend Design And Strength',
+    title: 'Secure Stop, Sleek Style',
+    subtitle: 'Stops with Style & Strength',
   },
+
   {
-    title: 'Strong Grip, Lasting Style',
-    subtitle: 'Handles That Blend Design And Strength',
+    title: 'Durable Spin, Elegant Fit',
+    subtitle: 'Durable Hinges with Elegant Design',
   },
 ];
 
@@ -53,13 +55,19 @@ const Hero = () => {
           className='swiper'
         >
           {slides.map((slide, index) => (
-            <SwiperSlide key={index} className='swiper-slide swiper-slide-1'>
+            <SwiperSlide
+              key={index}
+              className={`swiper-slide swiper-slide-${index + 1}`}
+            >
               <div className='slide-content'>
                 <h3 className='heading-h3 slide-heading'>{slide.title}</h3>
                 <h4 className='heading-h4 slide-subheading'>
                   {slide.subtitle}
                 </h4>
-                <button className='btn medium'>Explore More</button>
+                <Link href='/products'>
+                  {' '}
+                  <button className='btn small '>Explore More</button>
+                </Link>
               </div>
             </SwiperSlide>
           ))}

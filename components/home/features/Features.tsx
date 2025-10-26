@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './Features.css';
 import { Check } from 'lucide-react';
 
@@ -44,10 +45,14 @@ const Features = () => {
                   ))}
                 </ul>
                 <div className='products-cta'>
-                  <button className='btn large'>Contact Us</button>
-                  <a className='btn-secondary' href='#'>
-                    View All Products
-                  </a>
+                  <Link href='/contact'>
+                    <button className='btn large'>Contact Us</button>
+                  </Link>
+                  <Link href='/products'>
+                    <span className='btn-secondary' >
+                      View All Products
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>

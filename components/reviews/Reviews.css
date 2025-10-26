@@ -17,7 +17,7 @@
   position: relative;
   border-radius: 1rem;
   box-shadow: 0 20px 16px rgba(0, 0, 0, 0.1);
-  background:var(--color-white);
+  background: var(--color-white);
 }
 
 .reviews-grid-item img {
@@ -44,7 +44,7 @@
   gap: 0.5rem;
 }
 
-.review-grid-customer img {
+.review-grid-customer > .image-wrapper {
   position: absolute;
   top: -30px;
   left: 50%;
@@ -53,9 +53,18 @@
   height: 60px;
   border-radius: 50%;
   border: 10px solid var(--color-white);
+  background-color: #f6973f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.review-grid-customer > .image-wrapper > span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
 }
 
-.cutsomer-heading{
+.cutsomer-heading {
   font-size: 2rem;
   font-weight: 400;
 }
