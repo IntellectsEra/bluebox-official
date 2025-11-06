@@ -38,6 +38,33 @@
   line-height: 39px;
   color: #363636;
 }
+.contact-info {
+  margin-top: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+  color: #363636;
+}
+
+.contact-icon {
+  color: #2459B9; 
+  width: 18px;  
+  height: 18px; 
+  margin-top: 4px;
+}
+
+
+.dotted-line {
+  width: 100%;
+  max-width: 500px;
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 2px dotted rgba(0, 0, 0, 0.2);
+}
 
 /* Form */
 .contact-grid-items-form {

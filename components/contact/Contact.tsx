@@ -1,4 +1,5 @@
 import { Plus, PlusCircle } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import Reviews from '../reviews/Reviews';
 import './Contact.css';
 
@@ -18,7 +19,21 @@ export default function Contact() {
                 locks. Durable, functional, and stylish fittings crafted to meet
                 global standards.
               </p>
+                <hr className="dotted-line" />
+           <div className='contact-info'>
+           <div className='contact-info-item'>
+            <MapPin className='contact-icon' />
+            <p>No.39, Ground Floor, Ambedkar Street, Aparna Nagar, Ayappakkam, Chennai - 600077.</p>
+          </div>
+
+           <div className='contact-info-item'>
+           <Phone className='contact-icon' />
+          <p>+91 98844-11134</p>
+           </div>
             </div>
+              
+            </div>
+           
 
             {/* Form */}
             <div className='contact-grid-items-form'>
