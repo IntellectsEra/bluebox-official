@@ -49,9 +49,7 @@ const Features = () => {
                     <button className='btn large'>Contact Us</button>
                   </Link>
                   <Link href='/products'>
-                    <span className='btn-secondary' >
-                      View All Products
-                    </span>
+                    <span className='btn-secondary'>View All Products</span>
                   </Link>
                 </div>
               </div>
@@ -64,3 +62,4 @@ const Features = () => {
 };
 
 export default Features;
+

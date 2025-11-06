@@ -78,7 +78,7 @@ const Hero = () => {
             <ArrowRight />
           </div>
         </Swiper>
-        <div className='container'>
+        {/* <div className='container'>
           <ul className='hero-list'>
             {brands.map((brand, index) => (
               <li
@@ -90,7 +90,7 @@ const Hero = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
