@@ -4,13 +4,13 @@ import { Check } from 'lucide-react';
 
 const features = [
   {
-    img: '/assets/Feature 1.png',
+    img: '/assets/feature-1.webp',
     title: 'Elevate Your Mood with Comfortable Furniture',
     desc: 'Your Surrounding have a profound impact on your mood. Discover how our high-quality furniture can transform your space into a haven of comfort and happiness',
     points: ['Unmatched Comfort', 'Crafted quality', 'Stylish Elegance'],
   },
   {
-    img: '/assets/Feature 2.png',
+    img: '/assets/feature-2.webp',
     title: 'Elevate Your Space with Uncompromising Quality',
     desc: 'Experience the epitome of furniture quality. Our products are meticulously crafted with an unwavering commitment to excellence. From the finest material to expert craftsmanship each piece embodies durability, comfort and timeless style. Elevate your space with assurance of exceptional quality and lasting beauty',
     points: ['Unmatched Comfort', 'Crafted quality', 'Stylish Elegance'],
@@ -62,4 +62,3 @@ const Features = () => {
 };
 
 export default Features;
-

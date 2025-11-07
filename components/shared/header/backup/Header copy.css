@@ -60,25 +60,22 @@ nav {
   position: absolute;
   top: 5rem;
   left: 0;
-  width: 480px;
-  background: #fff;
+  width: 450px;
+  background-color: #fff;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 20px;
   display: flex;
   justify-content: space-between;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
   padding: 1.5rem 2rem;
   z-index: 999;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 
-.dropdown-card.show {
+/* .nav-item.dropdown:hover .dropdown-card {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
-}
+} */
 
 .dropdown-column {
   width: 48%;
@@ -138,7 +135,7 @@ nav {
   .nav-list {
     width: 25rem;
     height: 100vh;
-    background-color: #abc8ff;
+    background-color: #d7d4ed;
     position: fixed;
     top: 0;
     right: -30rem;
@@ -168,9 +165,6 @@ nav {
     font-size: 1.6rem;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.7);
-    background-color: #fff;
-  }
-  .dropdown-card {
-    display: none;
+    background: transparent;
   }
 }
