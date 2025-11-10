@@ -328,12 +328,23 @@
   .contact-info-item p {
     font-size: 1.38rem; 
     line-height: 1.4;
-    padding: 0.2rem;
+    padding-right: 2rem;
+   
   }
 
   .dotted-line {
     margin: 0.8rem 0;
   }
+    .contact-info {
+    gap: 1rem;
+    align-items: flex-start; 
+    text-align: left;
+    padding: 0 1rem;
+  }
+   .contact-info-item {
+    gap: 0.5rem;
+  }
+ 
   
   
 }
