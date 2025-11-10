@@ -156,4 +156,27 @@ nav {
     color: rgba(0, 0, 0, 0.7);
     background: transparent;
   }
+    .dropdown-card {
+    position: static;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    margin-top: 1.2rem;
+    border-radius: 10px;
+  }
+   .dropdown-column {
+    width: 100%;
+    border: none !important; 
+   
+  }
+    .nav-item.dropdown {
+    position: static;
+  }
+    .dropdown-column li {
+    font-size: 0.95rem;
+  }
+    .dropdown-column h4 {
+    font-size: 1.1rem;
+  }
 }
