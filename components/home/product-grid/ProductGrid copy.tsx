@@ -1,14 +1,15 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './ProductGrid.css';
 import '../../product/TrendingProduct.css';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
 
+// Product data
 const products = [
   {
     product_no: 1,
+
     name: 'SS Hinges Premium Welded',
     description:
       'SS Hinges Premium Welded are strong stainless steel hinges designed for heavy-duty use, offering durability, smooth movement, and long-lasting rust resistance.',
@@ -135,39 +136,7 @@ const products = [
   },
 ];
 
-const categories = [
-  { key: 'all', label: 'All Products' },
-  { key: 'hinges', label: 'Hinges' },
-  { key: 'door-handles', label: 'Door Handle' },
-  { key: 'cabinet-handles', label: 'Cabinet Handles' },
-  { key: 'mortise-lock', label: 'Mortise Locks' },
-  { key: 'other', label: 'Other' },
-];
-
 const ProductGrid: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [shuffledProducts, setShuffledProducts] = useState(products);
-  const [filteredProducts, setFilteredProducts] = useState(
-    products.slice(0, 4)
-  );
-
-  // Shuffle only on client mount
-  useEffect(() => {
-    const shuffled = [...products].sort(() => Math.random() - 0.5);
-    setShuffledProducts(shuffled);
-    setFilteredProducts(shuffled.slice(0, 4));
-  }, []);
-
-  const handleCategoryChange = (category: string) => {
-    setActiveCategory(category);
-    if (category === 'all') {
-      const shuffled = [...products].sort(() => Math.random() - 0.5);
-      setFilteredProducts(shuffled.slice(0, 4));
-    } else {
-      setFilteredProducts(products.filter((p) => p.category === category));
-    }
-  };
-
   return (
     <section className='products'>
       <div className='container'>
@@ -176,80 +145,75 @@ const ProductGrid: React.FC = () => {
             <h2 className='heading-h2'>Best Selling Product</h2>
           </div>
 
-          {/* Category Buttons */}
-          <div className='flex items-center justify-center flex-wrap gap-6 md:gap-16 mb-6'>
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                className={`text-2xl cursor-pointer ${
-                  activeCategory === cat.key
-                    ? 'font-bold text-black'
-                    : 'font-semibold text-[#676767]'
-                }`}
-                onClick={() => handleCategoryChange(cat.key)}
+          <div className='flex items-center '>
+            <div className='product-tab-item'>
+              <button className='btn-product text-xl'>All Products</button>
+            </div>
+
+            <div className='product-tab-item'>
+              <button className='btn-product text-xl'>Hinges</button>
+            </div>
+
+            <div className='product-tab-item'>
+              <button className='btn-product text-xl'>Door Handle</button>
+            </div>
+
+            <div className='product-tab-item'>
+              <button className='btn-product text-xl'>Cabinet Handles </button>
+            </div>
+
+            <div className='product-tab-item'>
+              <button className='btn-product text-xl'>Mortise Locks </button>
+            </div>
+
+            <div className='product-tab-item'>
+              <button className='btn-product text-xl'>Other</button>
+            </div>
+          </div>
+
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8'>
+            {products.slice(0, 4).map((product) => (
+              <div
+                key={product.product_no}
+                className={`relative  trending-product-grid-item shadow`}
               >
-                {cat.label}
-              </button>
+                <div className='image-padding bg-amber-100'>
+                  <img
+                    src={product.img}
+                    alt=''
+                    className='w-full h-full object-contain'
+                  />
+                </div>
+                <div className='product-content'>
+                  <h5 className='text-3xl font-semibold product-grid-item-heading '>
+                    {product.name}
+                  </h5>
+                  <p className='text-xl product-description'>
+                    {product.description}
+                  </p>
+                </div>
+                <div className='product-action'>
+                  <div className='product-btn'>
+                    <Link href={product.link} target='_blank'>
+                      <span className='btn-primary whitespace-nowrap'>
+                        Know More
+                      </span>
+                    </Link>
+
+                    <Link href='/contact'>
+                      <button className='btn btn-product'>Contact Us</button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Animated Product Grid */}
-          <AnimatePresence mode='wait'>
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8'
-            >
-              {filteredProducts.map((product) => (
-                <motion.div
-                  key={product.product_no}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.25 }}
-                  className='relative trending-product-grid-item shadow'
-                >
-                  <div className='image-padding bg-amber-100'>
-                    <img
-                      src={product.img}
-                      alt={product.name}
-                      className='w-full h-full object-contain'
-                    />
-                  </div>
-                  <div className='product-content'>
-                    <h5 className='text-3xl font-semibold product-grid-item-heading'>
-                      {product.name}
-                    </h5>
-                    <p className='text-xl product-description'>
-                      {product.description}
-                    </p>
-                  </div>
-                  <div className='product-action'>
-                    <div className='product-btn'>
-                      <Link href={product.link} target='_blank'>
-                        <span className='btn-primary whitespace-nowrap'>
-                          Know More
-                        </span>
-                      </Link>
-                      <Link href='/contact'>
-                        <button className='btn btn-product'>Contact Us</button>
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* CTA Buttons */}
-          <div className='products-cta mt-10'>
+          <div className='products-cta'>
             <Link href='/contact'>
               <button className='btn large'>Contact Us</button>
             </Link>
+
             <Link href='/products' className='btn-secondary'>
               View All Products
             </Link>

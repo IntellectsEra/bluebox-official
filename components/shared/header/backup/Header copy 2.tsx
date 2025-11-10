@@ -1,19 +1,17 @@
 'use client';
 
 import './Header.css';
-import { useEffect, useRef, useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
   const dropdownRef = useRef<HTMLLIElement | null>(null);
 
-  const navigate = useRouter();
-
-  const openMenu = () => setNavOpen((prev) => !prev);
-  const closeMenu = () => setNavOpen(false);
+  const toggleNav = () => setNavOpen((prev) => !prev);
+  const closeNav = () => setNavOpen(false);
 
   // Handle outside click for dropdown
   useEffect(() => {
@@ -32,36 +30,37 @@ const Header = () => {
     };
   }, []);
 
-  const handleClick = () => {
-    navigate.push('/products');
-  };
   return (
-    <header>
+    <header className='header'>
       <div className='container'>
-        <nav>
+        <nav className='nav'>
+          {/* Brand */}
           <div className='nav-brand'>
             <Link href='/'>
-              <img src={'/assets/Logo.png'} alt='' />
+              <img src='/assets/Logo.png' alt='Logo' />
             </Link>
           </div>
-          <div className='menu-icons open' onClick={openMenu}>
-            <Menu />
+
+          {/* Mobile Menu Icon */}
+          <div className='menu-icon' onClick={toggleNav}>
+            {navOpen ? <X /> : <Menu />}
           </div>
+
+          {/* Navigation Links */}
           <ul className={`nav-list ${navOpen ? 'active' : ''}`}>
-            <div className='menu-icons close' onClick={closeMenu}>
-              <X />
-            </div>
-            <li className='nav-item '>
-              <Link href='/' className='nav-link'>
+            <li className='nav-item'>
+              <Link href='/' className='nav-link' onClick={closeNav}>
                 Home
               </Link>
             </li>
-            <li className='nav-item '>
-              <Link href='/about' className='nav-link'>
+
+            <li className='nav-item'>
+              <Link href='/about' className='nav-link' onClick={closeNav}>
                 About Us
               </Link>
             </li>
 
+            {/* Dropdown Menu */}
             <li
               className='nav-item dropdown'
               ref={dropdownRef}
@@ -69,8 +68,8 @@ const Header = () => {
               onMouseLeave={() => setShowProducts(false)}
             >
               <button
-                className='nav-link dropdown-toggle cursor-pointer'
-                onClick={() => handleClick()}
+                className='nav-link dropdown-toggle'
+                onClick={() => setShowProducts((prev) => !prev)}
               >
                 Products
               </button>
@@ -106,19 +105,12 @@ const Header = () => {
               </div>
             </li>
 
-            <li className='nav-item '>
-              <Link href='/contact' className='nav-link'>
+            <li className='nav-item'>
+              <Link href='/contact' className='nav-link' onClick={closeNav}>
                 Contact
               </Link>
             </li>
           </ul>
-          <div className='nav-cta'>
-            <Link href='/'>
-              <button className='btn small whitespace'>
-                Download Brochures{' '}
-              </button>
-            </Link>
-          </div>
         </nav>
       </div>
     </header>

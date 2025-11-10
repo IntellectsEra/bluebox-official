@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './Footer.css';
 
 const Footer = () => {
@@ -7,7 +8,13 @@ const Footer = () => {
         <div className='footer-brand'>
           <img src={'/assets/logo.png'} alt='' />
         </div>
-        <p>Copyright 2025. All rights reserved. Contact us at our email</p>
+        <p>
+          © 2025{' '}
+          <Link href={'https://intellectsera.com/'} target='_blank'>
+            IntellectsEra Technologies Pvt Ltd
+          </Link>
+          . All rights reserved.
+        </p>
       </div>
     </footer>
   );

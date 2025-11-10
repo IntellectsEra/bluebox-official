@@ -177,14 +177,12 @@ const ProductGrid: React.FC = () => {
           </div>
 
           {/* Category Buttons */}
-          <div className='flex items-center justify-center flex-wrap gap-6 md:gap-16 mb-6'>
+          <div className='flex items-center flex-wrap gap-2 mb-6'>
             {categories.map((cat) => (
               <button
                 key={cat.key}
-                className={`text-2xl cursor-pointer ${
-                  activeCategory === cat.key
-                    ? 'font-bold text-black'
-                    : 'font-semibold text-[#676767]'
+                className={`btn-product text-xl ${
+                  activeCategory === cat.key ? 'active' : ''
                 }`}
                 onClick={() => handleCategoryChange(cat.key)}
               >
