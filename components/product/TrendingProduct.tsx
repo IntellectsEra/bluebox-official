@@ -136,7 +136,14 @@ const products = [
 ];
 
 const TrendingProducts = () => {
-  const [active, setActive] = useState<any>(null);
+   const [active, setActive] = useState<number | null>(null);
+   
+   const handleCardClick = (product: any) => {
+    setActive(product.product_no);
+   
+    window.open(product.link, '_blank', 'noopener,noreferrer');
+  };
+
 
   return (
     <>
@@ -151,10 +158,10 @@ const TrendingProducts = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
               {products.map((product) => (
                 <div
-                  key={product.product_no}
-                  onClick={() => setActive(product.product_no)}
-                  className={`relative  trending-product-grid-item shadow ${
-                    active == product.product_no ? 'product-active' : ''
+                   key={product.product_no}
+                  onClick={() => handleCardClick(product)} 
+                  className={`relative trending-product-grid-item shadow ${
+                    active === product.product_no ? 'product-active' : ''
                   }`}
                 >
                   <div className='image-padding bg-amber-100'>
@@ -172,20 +179,27 @@ const TrendingProducts = () => {
                       {product.description}
                     </p>
                   </div>
-                  <div className='product-action'>
-                    <div className='product-btn'>
-                      <Link href={product.link} target='_blank'>
-                        <span className='btn-primary whitespace-nowrap'>
+                    <div className="product-action">
+                    <div className="product-btn">
+                      <Link
+                        href={product.link}
+                        target="_blank"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <span className="btn-primary whitespace-nowrap">
                           Know More
                         </span>
                       </Link>
-
-                      <Link href={`/contact?product=${encodeURIComponent(product.name)}`}>
-                        <button className='btn btn-product'>Contact Us</button>
+                        <Link
+                        href={`/contact?product=${encodeURIComponent(product.name)}`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <button className='btn btn-product'>Enquire</button>
                       </Link>
                     </div>
                   </div>
                 </div>
+                
               ))}
             </div>
           </div>

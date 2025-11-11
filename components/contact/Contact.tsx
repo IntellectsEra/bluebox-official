@@ -1,21 +1,58 @@
 'use client';
 import { Plus, PlusCircle } from 'lucide-react';
-import { MapPin, Phone } from 'lucide-react';
+import {  MapPin, Phone } from 'lucide-react';
 import Reviews from '../reviews/Reviews';
 import './Contact.css';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+const allProducts = [
+  'SS Hinges Premium Welded',
+  'Door Chain',
+  'Door Handles',
+  'Door Stoppers',
+  'Cabinet Handles',
+  'Caster Wheel',
+  'Aldrop',
+  'SS Kitchen Basket',
+  'Sofa Legs',
+  'Tower Bolt',
+  'Mortise Locks',
+  'Knobs',
+  'Brass Hinges',
+  'Ganesh Door Handle',
+];
+
 export default function Contact() {
-    const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
   const selectedProduct = searchParams.get('product'); // read from URL
-  const [product, setProduct] = useState('');
+  const [products, setProducts] = useState<string[]>([]);
 
   useEffect(() => {
     if (selectedProduct) {
-      setProduct(selectedProduct);
+      setProducts([selectedProduct]);
     }
+    else {
+    
+    setProducts(['']);
+  }
   }, [selectedProduct]);
+
+   const handleAddProduct = () => {
+    setProducts([...products, '']); 
+  };
+
+   const handleProductChange = (index: number, value: string) => {
+    const updated = [...products];
+    updated[index] = value;
+    setProducts(updated);
+  };
+
+    const getAvailableProducts = (currentValue: string) => {
+    return allProducts.filter(
+      (p) => !products.includes(p) || p === currentValue
+    );
+  };
   return (
     <>
       <section className='contact'>
@@ -87,67 +124,60 @@ export default function Contact() {
                     />
                   </div>
                 </div>
+           {products.map((prod, index) => (
+  
+            <div className='input-column' key={index}>
+            <div className='input-box'>
+           <label>
+           Product {index + 1}
+         <span style={{ color: '#FF1F1F' }}>*</span>
+         </label>
+         <select
+         value={prod}
+         onChange={(e) => handleProductChange(index, e.target.value)}
+      >
+        <option value=''>Select a product</option>
+        {getAvailableProducts(prod).map((p) => (
+          <option key={p} value={p}>
+            {p}
+          </option>
+        ))}
+      </select>
+    </div>
 
-                <div className='input-column'>
-                  <div className='input-box'>
-                    <label htmlFor='product'>
-                      Product<span style={{ color: '#FF1F1F' }}>*</span>
-                    </label>
-                 <select
-                      name='product'
-                      id='product'
-                      value={product}
-                      onChange={(e) => setProduct(e.target.value)}
-                    >
-                      <option value=''>Select a product</option>
-                      <option>SS Hinges Premium Welded</option>
-                      <option>Door Chain</option>
-                      <option>Door Handles</option>
-                      <option>Door Stoppers</option>
-                      <option>Cabinet Handles</option>
-                      <option>Caster Wheel</option>
-                      <option>Aldrop</option>
-                      <option>SS Kitchen Basket</option>
-                      <option>Sofa Legs</option>
-                      <option>Tower Bolt</option>
-                      <option>Mortise Locks</option>
-                      <option>Knobs</option>
-                      <option>Brass Hinges</option>
-                      <option>Ganesh Door Handle</option>
-                    </select>
-                  </div>
+    <div className='input-box'>
+      <label htmlFor='quantity'>
+        Min. Order Quantity (MOQ)
+        <span style={{ color: '#FF1F1F' }}>*</span>
+      </label>
+      <select name='quantity' id='quantity'>
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+      </select>
+    </div>
+  </div>
+))}
 
-                  <div className='input-box'>
-                    <label htmlFor='quantity'>
-                      Min. Order Quantity (MOQ)
-                      <span style={{ color: '#FF1F1F' }}>*</span>
-                    </label>
-                    <select name='quantity' id='quantity'>
-                      <option>10</option>
-                      <option>20</option>
-                      <option>30</option>
-                      <option>40</option>
-                      <option>50</option>
-                    </select>
-                  </div>
-                </div>
 
-                <div className='new-product'>
-                  <PlusCircle className='w-7 h-7 text-blue-700' />
-                  <span>Add New Product</span>
-                </div>
+    <div className='new-product' onClick={handleAddProduct}>
+   <PlusCircle className='w-7 h-7 text-blue-700 cursor-pointer' />
+   <span>Add New Product</span>
+   </div>
 
-                <div className='contact-form-btn'>
-                  <button className='btn large' type='submit'>
-                    Contact Us
-                  </button>
-                </div>
+   <div className='contact-form-btn'>
+  <button className='btn large' type='submit'>
+    Contact Us
+  </button>
+</div>
               </form>
             </div>
           </div>
         </div>
       </section>
-      <section className='partners'>
+      {/*  <section className='partners'>
         <div className='container'>
           <ul className='partners-list'>
             <li className='partner-item'>LumberLand</li>
@@ -158,7 +188,8 @@ export default function Contact() {
             <li className='partner-item'>SafetyShield</li>
           </ul>
         </div>
-      </section>
+      </section> */}
+    
       <Reviews />
     </>
   );

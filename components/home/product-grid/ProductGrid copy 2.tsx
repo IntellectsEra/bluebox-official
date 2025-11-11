@@ -246,7 +246,7 @@ const ProductGrid: React.FC = () => {
           {/* CTA Buttons */}
           <div className='products-cta mt-10'>
             <Link href='/contact'>
-              <button className='btn large'>Contact Us</button>
+              <button className='btn large'>Enquire</button>
             </Link>
             <Link href='/products' className='btn-secondary'>
               View All Products
