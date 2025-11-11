@@ -9,9 +9,9 @@ const ChooseUs = () => {
       img: '/assets/chooseus1.png',
       title: 'Innovation',
       lists: [
-        'We blend creativity and technology to deliver future-ready solutions.',
-        'Our approach transforms unique visions into practical, high-value products.',
-        'Every design is built to inspire growth and global competitiveness.',
+        'We combine design thinking with technical expertise to craft products that lead the market.',
+        'Our solutions are engineered to enhance aesthetics, durability, and functionality.',
+        'Every creation reflects our focus on modern design and long-term value.',
       ],
     },
     {
@@ -19,9 +19,9 @@ const ChooseUs = () => {
       img: '/assets/chooseus2.png',
       title: 'Quality & Trust',
       lists: [
-        'Each product reflects precision, durability, and long-lasting performance',
-        'We maintain strict quality standards to ensure consistency and reliability.',
-        'Our transparent process builds lasting trust with every client.',
+        'Each product meets international standards for strength and precision.',
+        'Our transparent processes and strict quality controls ensure consistent reliability.',
+        'We believe trust is built — one product, one partnership at a time.',
       ],
     },
     {
@@ -29,9 +29,9 @@ const ChooseUs = () => {
       img: '/assets/chooseus3.png',
       title: 'Export',
       lists: [
-        'Strong global networks enable seamless delivery across borders.',
-        'We provide world-class hardware solutions tailored for international markets.',
-        'Our export expertise ensures businesses scale confidently worldwide.',
+        'Strong supply chains enable timely global delivery.',
+        'Our export operations are built on efficiency, documentation accuracy, and responsive support.',
+        'We help clients expand confidently with hardware built to global expectations.'
       ],
     },
   ];
@@ -53,8 +53,7 @@ const ChooseUs = () => {
                     {item.lists.map((list, index) => (
                       <li key={index}>
                         {' '}
-                        <span className='tick'>
-                          <Check className='w-5 h-5' />
+                        <span className='choose-dot'>
                         </span>
                         {list}
                       </li>
@@ -66,7 +65,7 @@ const ChooseUs = () => {
           </div>
           <Link href='/contact'>
             {' '}
-            <button className='btn large'>Contact us</button>
+            <button className='btn large'>Contact Us</button>
           </Link>
         </div>
       </div>
