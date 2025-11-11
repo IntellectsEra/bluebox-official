@@ -180,7 +180,7 @@ const TrendingProducts = () => {
                         </span>
                       </Link>
 
-                      <Link href='/contact'>
+                      <Link href={`/contact?product=${encodeURIComponent(product.name)}`}>
                         <button className='btn btn-product'>Contact Us</button>
                       </Link>
                     </div>

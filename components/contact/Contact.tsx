@@ -1,9 +1,21 @@
+'use client';
 import { Plus, PlusCircle } from 'lucide-react';
 import { MapPin, Phone } from 'lucide-react';
 import Reviews from '../reviews/Reviews';
 import './Contact.css';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function Contact() {
+    const searchParams = useSearchParams();
+  const selectedProduct = searchParams.get('product'); // read from URL
+  const [product, setProduct] = useState('');
+
+  useEffect(() => {
+    if (selectedProduct) {
+      setProduct(selectedProduct);
+    }
+  }, [selectedProduct]);
   return (
     <>
       <section className='contact'>
@@ -81,12 +93,27 @@ export default function Contact() {
                     <label htmlFor='product'>
                       Product<span style={{ color: '#FF1F1F' }}>*</span>
                     </label>
-                    <select name='product' id='product'>
-                      <option></option>
-                      <option>Product 1</option>
-                      <option>Product 2</option>
-                      <option>Product 3</option>
-                      <option>Product 4</option>
+                 <select
+                      name='product'
+                      id='product'
+                      value={product}
+                      onChange={(e) => setProduct(e.target.value)}
+                    >
+                      <option value=''>Select a product</option>
+                      <option>SS Hinges Premium Welded</option>
+                      <option>Door Chain</option>
+                      <option>Door Handles</option>
+                      <option>Door Stoppers</option>
+                      <option>Cabinet Handles</option>
+                      <option>Caster Wheel</option>
+                      <option>Aldrop</option>
+                      <option>SS Kitchen Basket</option>
+                      <option>Sofa Legs</option>
+                      <option>Tower Bolt</option>
+                      <option>Mortise Locks</option>
+                      <option>Knobs</option>
+                      <option>Brass Hinges</option>
+                      <option>Ganesh Door Handle</option>
                     </select>
                   </div>
 
