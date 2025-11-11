@@ -136,14 +136,13 @@ const products = [
 ];
 
 const TrendingProducts = () => {
-   const [active, setActive] = useState<number | null>(null);
-   
-   const handleCardClick = (product: any) => {
+  const [active, setActive] = useState<number | null>(null);
+
+  const handleCardClick = (product: any) => {
     setActive(product.product_no);
-   
+
     window.open(product.link, '_blank', 'noopener,noreferrer');
   };
-
 
   return (
     <>
@@ -158,8 +157,8 @@ const TrendingProducts = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
               {products.map((product) => (
                 <div
-                   key={product.product_no}
-                  onClick={() => handleCardClick(product)} 
+                  key={product.product_no}
+                  onClick={() => handleCardClick(product)}
                   className={`relative trending-product-grid-item shadow ${
                     active === product.product_no ? 'product-active' : ''
                   }`}
@@ -179,27 +178,35 @@ const TrendingProducts = () => {
                       {product.description}
                     </p>
                   </div>
-                    <div className="product-action">
-                    <div className="product-btn">
+                  <div className='product-action'>
+                    <div className='product-btn'>
                       <Link
                         href={product.link}
-                        target="_blank"
+                        target='_blank'
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <span className="btn-primary whitespace-nowrap">
+                        <span className='btn-primary whitespace-nowrap'>
                           Know More
                         </span>
                       </Link>
-                        <Link
-                        href={`/contact?product=${encodeURIComponent(product.name)}`}
+
+                      <Link
+                        href={`/contact?product=${encodeURIComponent(
+                          product.name
+                        )}`}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <button className='btn btn-product'>Enquire</button>
+                        <button
+                          type='button'
+                          className='btn btn-product'
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Enquire
+                        </button>
                       </Link>
                     </div>
                   </div>
                 </div>
-                
               ))}
             </div>
           </div>

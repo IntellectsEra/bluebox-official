@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import './Reviews.css';
 

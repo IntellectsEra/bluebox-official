@@ -1,7 +1,9 @@
 'use client';
-import { PlusCircle, MapPin, Phone } from 'lucide-react';
+import { Plus, PlusCircle } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import Reviews from '../reviews/Reviews';
 import './Contact.css';
+import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 
 const allProducts = [
@@ -22,20 +24,20 @@ const allProducts = [
 ];
 
 export default function Contact() {
+  const searchParams = useSearchParams();
+  const selectedProduct = searchParams.get('product');
   const [products, setProducts] = useState<string[]>([]);
 
-  // ✅ Get query params client-side safely
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const selectedProduct = params.get('product');
-      if (selectedProduct) setProducts([selectedProduct]);
-      else setProducts(['']);
+    if (selectedProduct) {
+      setProducts([selectedProduct]);
+    } else {
+      setProducts(['']);
     }
-  }, []);
+  }, [selectedProduct]);
 
   const handleAddProduct = () => {
-    setProducts((prev) => [...prev, '']);
+    setProducts([...products, '']);
   };
 
   const handleProductChange = (index: number, value: string) => {
@@ -44,47 +46,49 @@ export default function Contact() {
     setProducts(updated);
   };
 
-  const getAvailableProducts = (currentValue: string) =>
-    allProducts.filter((p) => !products.includes(p) || p === currentValue);
-
+  const getAvailableProducts = (currentValue: string) => {
+    return allProducts.filter(
+      (p) => !products.includes(p) || p === currentValue
+    );
+  };
   return (
     <>
       <section className='contact'>
         <div className='container'>
           <div className='contact-grid'>
-            
-              <div className='contact-grid-items'>
-                <p>Contact us</p>
-                <h2 className='heading-h2 contact-heading'>
-                  Premium Fittings for Every Need,<span> Built to Last.</span>
-                </h2>
-                <p>
-                  Discover a wide range of high-quality hinges, handles, and
-                  locks. Durable, functional, and stylish fittings crafted to
-                  meet global standards.
-                </p>
-                <hr className='dotted-line' />
-                <div className='contact-info'>
-                  <div className='contact-info-item'>
-                    <MapPin className='contact-icon' />
-                    <p>
-                      No.39, Ground Floor, Ambedkar Street, Aparna Nagar,
-                      Ayappakkam, Chennai - 600077.
-                    </p>
-                  </div>
-                  <div className='contact-info-item'>
-                    <Phone className='contact-icon' />
-                    <p>+91 98844-11134</p>
-                  </div>
+            <div className='contact-grid-items'>
+              <p>Contact us</p>
+              <h2 className='heading-h2 contact-heading'>
+                Premium Fittings for Every Need,<span> Built to Last.</span>
+              </h2>
+              <p>
+                Discover a wide range of high-quality hinges, handles, and
+                locks. Durable, functional, and stylish fittings crafted to meet
+                global standards.
+              </p>
+              <hr className='dotted-line' />
+              <div className='contact-info'>
+                <div className='contact-info-item'>
+                  <MapPin className='contact-icon' />
+                  <p>
+                    No.39, Ground Floor, Ambedkar Street, Aparna Nagar,
+                    Ayappakkam, Chennai - 600077.
+                  </p>
+                </div>
+
+                <div className='contact-info-item'>
+                  <Phone className='contact-icon' />
+                  <p> +91 98844-11134</p>
                 </div>
               </div>
-            
+            </div>
 
             {/* Form */}
             <div className='contact-grid-items-form'>
               <h4>Get a Quote</h4>
               <Suspense fallback={<div>Loading form...</div>}>
-                <form>
+                <form action=''>
+                  {/* Name */}
                   <div className='input-box'>
                     <label htmlFor='name'>
                       Name<span style={{ color: '#FF1F1F' }}>*</span>
@@ -92,6 +96,7 @@ export default function Contact() {
                     <input type='text' id='name' name='name' />
                   </div>
 
+                  {/* Email */}
                   <div className='input-box'>
                     <label htmlFor='email'>
                       Email<span style={{ color: '#FF1F1F' }}>*</span>
@@ -99,6 +104,7 @@ export default function Contact() {
                     <input type='email' id='email' name='email' />
                   </div>
 
+                  {/* Phone */}
                   <div className='input-box'>
                     <label htmlFor='phone'>
                       Phone Number<span style={{ color: '#FF1F1F' }}>*</span>
@@ -118,7 +124,6 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-
                   {products.map((prod, index) => (
                     <div className='input-column' key={index}>
                       <div className='input-box'>
@@ -173,6 +178,18 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      {/*  <section className='partners'>
+        <div className='container'>
+          <ul className='partners-list'>
+            <li className='partner-item'>LumberLand</li>
+            <li className='partner-item'>PowerPro</li>
+            <li className='partner-item'>Tool Heaven</li>
+            <li className='partner-item'>FurniCraft</li>
+            <li className='partner-item'>CutMaster</li>
+            <li className='partner-item'>SafetyShield</li>
+          </ul>
+        </div>
+      </section> */}
 
       <Reviews />
     </>
