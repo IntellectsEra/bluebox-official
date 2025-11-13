@@ -68,7 +68,14 @@ header {
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.btn:hover {
+  transform: scale(1.045);
+}
+
 .btn-product {
   padding: 1rem 2.5rem;
 }
@@ -88,13 +95,23 @@ header {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--bg-btn);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-secondary {
   font-size: 1.6rem;
   font-weight: 500;
   color: var(--color-secondary-black);
   white-space: nowrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: scale(1.045);
+}
+
 /* btn end */
 .underline {
   display: block;
