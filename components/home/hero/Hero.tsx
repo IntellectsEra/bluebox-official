@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { motion, Variants } from 'framer-motion';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,29 +18,28 @@ const slides = [
   },
   {
     title: 'Roll Smooth, Last Long',
-    subtitle: 'Wheels that Move with Power',
+    subtitle: 'Wheels that Move with Power',
   },
   {
     title: 'Secure Stop, Sleek Style',
     subtitle: 'Stops with Style & Strength',
   },
-
   {
     title: 'Durable Spin, Elegant Fit',
-    subtitle: 'Durable Hinges with Elegant Design',
+    subtitle: 'Durable Hinges with Elegant Design',
   },
 ];
 
-const brands = [
-  { name: 'LumberLand', font: 'Inter', weight: 'bold' },
-  { name: 'PowerPro', font: 'Poppins', weight: 400 },
-  { name: 'Tool Heaven', font: 'Montserrat', weight: 600 },
-  { name: 'FurniCraft', font: 'Montserrat', weight: 'bold' },
-  { name: 'CutMaster', font: 'Poppins', weight: 'bold' },
-  { name: 'SafetyShield', font: 'Inter', weight: 'bold' },
-];
-
 const Hero = () => {
+  const contentVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
   return (
     <div className='hero'>
       <div className='hero-container'>
@@ -59,18 +59,25 @@ const Hero = () => {
               key={index}
               className={`swiper-slide swiper-slide-${index + 1}`}
             >
-              <div className='slide-content'>
+              <motion.div
+                className='slide-content'
+                variants={contentVariants}
+                initial='hidden'
+                whileInView='show'
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <h3 className='heading-h3 slide-heading'>{slide.title}</h3>
                 <h4 className='heading-h4 slide-subheading'>
                   {slide.subtitle}
                 </h4>
                 <Link href='/products'>
-                  {' '}
-                  <button className='btn small '>Explore More</button>
+                  <button className='btn small'>Explore More</button>
                 </Link>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
+
+          {/* Swiper Navigation */}
           <div className='swiper-button-prev custom-arrow'>
             <ArrowLeft />
           </div>
@@ -78,19 +85,6 @@ const Hero = () => {
             <ArrowRight />
           </div>
         </Swiper>
-        {/* <div className='container'>
-          <ul className='hero-list'>
-            {brands.map((brand, index) => (
-              <li
-                key={index}
-                className='hero-item'
-                style={{ fontFamily: brand.font, fontWeight: brand.weight }}
-              >
-                {brand.name}
-              </li>
-            ))}
-          </ul>
-        </div> */}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './ProductGrid.css';
 import '../../product/TrendingProduct.css';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 const products = [
   {
@@ -168,13 +168,24 @@ const ProductGrid: React.FC = () => {
     }
   };
 
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  };
+
   return (
     <section className='products'>
       <div className='container'>
         <div className='products-container'>
-          <div className='products-title'>
+          <motion.div
+            className='products-title'
+            variants={fadeUp}
+            initial='hidden'
+            whileInView='show'
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <h2 className='heading-h2'>Best Selling Product</h2>
-          </div>
+          </motion.div>
 
           {/* Category Buttons */}
           <div className='flex items-center justify-center flex-wrap gap-6 md:gap-16 mb-6'>

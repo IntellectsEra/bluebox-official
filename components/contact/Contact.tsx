@@ -3,6 +3,7 @@ import { PlusCircle, MapPin, Phone } from 'lucide-react';
 import Reviews from '../reviews/Reviews';
 import './Contact.css';
 import { Suspense, useEffect, useState } from 'react';
+import ContactContent from './ContactContent';
 
 const allProducts = [
   'SS Hinges Premium Welded',
@@ -52,33 +53,7 @@ export default function Contact() {
       <section className='contact'>
         <div className='container'>
           <div className='contact-grid'>
-            
-              <div className='contact-grid-items'>
-                <p>Contact us</p>
-                <h2 className='heading-h2 contact-heading'>
-                  Premium Fittings for Every Need,<span> Built to Last.</span>
-                </h2>
-                <p>
-                  Discover a wide range of high-quality hinges, handles, and
-                  locks. Durable, functional, and stylish fittings crafted to
-                  meet global standards.
-                </p>
-                <hr className='dotted-line' />
-                <div className='contact-info'>
-                  <div className='contact-info-item'>
-                    <MapPin className='contact-icon' />
-                    <p>
-                      No.39, Ground Floor, Ambedkar Street, Aparna Nagar,
-                      Ayappakkam, Chennai - 600077.
-                    </p>
-                  </div>
-                  <div className='contact-info-item'>
-                    <Phone className='contact-icon' />
-                    <p>+91 98844-11134</p>
-                  </div>
-                </div>
-              </div>
-            
+            <ContactContent />
 
             {/* Form */}
             <div className='contact-grid-items-form'>
