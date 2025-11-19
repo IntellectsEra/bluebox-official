@@ -115,24 +115,24 @@ const products = [
     link: '/products/Knobs.pdf',
     category: 'other',
   },
-  {
-    product_no: 13,
-    name: 'Brass Hinges',
-    description:
-      'Brass hinges are durable hardware components used to attach doors, cabinets, and windows securely. Made from high-quality brass, they resist corrosion and last long.',
-    img: '/products/Brass Hinges.avif',
-    link: '/products/Brass Hinges.pdf',
-    category: 'hinges',
-  },
-  {
-    product_no: 14,
-    name: 'Ganesh Door Handle',
-    description:
-      'A divine, golden design that blends tradition with modern interiors, this door handle adds timeless elegance, intricate detailing, and a touch of luxury to every entrance.',
-    img: '/products/Ganesh door handle.avif',
-    link: '/products/Ganesh door handle.pdf',
-    category: 'other',
-  },
+  // {
+  //   product_no: 13,
+  //   name: 'Brass Hinges',
+  //   description:
+  //     'Brass hinges are durable hardware components used to attach doors, cabinets, and windows securely. Made from high-quality brass, they resist corrosion and last long.',
+  //   img: '/products/Brass Hinges.avif',
+  //   link: '/products/Brass Hinges.pdf',
+  //   category: 'hinges',
+  // },
+  // {
+  //   product_no: 14,
+  //   name: 'Ganesh Door Handle',
+  //   description:
+  //     'A divine, golden design that blends tradition with modern interiors, this door handle adds timeless elegance, intricate detailing, and a touch of luxury to every entrance.',
+  //   img: '/products/Ganesh door handle.avif',
+  //   link: '/products/Ganesh door handle.pdf',
+  //   category: 'other',
+  // },
 ];
 
 const TrendingProducts = () => {

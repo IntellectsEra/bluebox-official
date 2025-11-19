@@ -15,7 +15,7 @@ const Commitment = () => {
       title: 'Premium Product Range',
       description:(
         <>
-        <span className="blue-text">BluBox Enterprises</span> — our global business arm
+        <span className="blue-text">BluBox Exports</span> — our global business arm
          created to connect the quality and reliability of Indian hardware with the world
         </>
       ),

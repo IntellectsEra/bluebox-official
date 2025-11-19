@@ -107,9 +107,21 @@ header {
   cursor: pointer;
 }
 
+.link_all_btn {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-secondary-black);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.link_all_btn:hover {
+  transform: scale(1.045) !important;
+}
 .btn-primary:hover,
 .btn-secondary:hover {
-  transform: scale(1.045);
+  transform: scale(1.045) !important;
 }
 
 /* btn end */

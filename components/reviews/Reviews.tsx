@@ -10,7 +10,7 @@ const reviewsData = [
     name: 'Ravi Kumar',
     city: 'Mumbai',
     review:
-      'Installed the Ganesh Golden Door Holder from BluBox Enterprises across our temple-style entrance. The rich golden finish and sturdy design uplifted the look instantly. Exceptional décor quality and reliable build.',
+      'Installed the Ganesh Golden Door Holder from BluBox Exports across our temple-style entrance. The rich golden finish and sturdy design uplifted the look instantly. Exceptional décor quality and reliable build.',
     product: 'Ganesh Golden Door Holder',
   },
   {
@@ -37,7 +37,7 @@ const reviewsData = [
   //   name: 'Jessica Williams',
   //   city: 'Seattle, WA',
   //   review:
-  //     'I replaced my old knobs with the Classic Brass Drawer Pull from BluBox Enterprises. The polished brass makes my kitchen drawers pop in style—smooth installation and premium feel. Highly recommend.',
+  //     'I replaced my old knobs with the Classic Brass Drawer Pull from BluBox Exports. The polished brass makes my kitchen drawers pop in style—smooth installation and premium feel. Highly recommend.',
   //   product: 'Classic Brass Drawer Pull',
   // },
   // {

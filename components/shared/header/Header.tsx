@@ -80,22 +80,28 @@ const Header = () => {
                   <h4>Door Fittings</h4>
                   <ul>
                     <li>SS Hinges (Premium / Welded)</li>
+                    <li>Mortise Locks</li>
                     <li>Door Handles</li>
-                    <li>Door Chain</li>
-                    <li>Door Stoppers</li>
                     <li>Aldrops</li>
                     <li>Tower Bolts</li>
-                    <li>Mortise Locks</li>
+                    <li>Door Stoppers</li>
+                    <li>Door Chain</li>
+
+                    <li>Cabinet Handles</li>
                   </ul>
                 </div>
                 <div className='dropdown-column'>
-                  <h4>Cabinet & Furniture Fittings</h4>
+                  <h4>Furniture Fittings</h4>
                   <ul>
-                    <li>Cabinet Handles</li>
                     <li>Knobs</li>
-                    <li>Sofa Legs</li>
-                    <li>Castor Wheels</li>
                   </ul>
+                  <div className='divider'>
+                    <h4>Hardware Fittings</h4>
+                    <ul>
+                      <li>Sofa Legs</li>
+                      <li>Castor Wheels</li>
+                    </ul>
+                  </div>
                   <div className='divider'>
                     <h4>Kitchen Accessories</h4>
                     <ul>

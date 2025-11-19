@@ -115,24 +115,24 @@ const products = [
     link: '/products/Knobs.pdf',
     category: 'other',
   },
-  {
-    product_no: 13,
-    name: 'Brass Hinges',
-    description:
-      'Brass hinges are durable hardware components used to attach doors, cabinets, and windows securely. Made from high-quality brass, they resist corrosion and last long.',
-    img: '/products/Brass Hinges.avif',
-    link: '/products/Brass Hinges.pdf',
-    category: 'hinges',
-  },
-  {
-    product_no: 14,
-    name: 'Ganesh Door Handle',
-    description:
-      'A divine, golden design that blends tradition with modern interiors, this door handle adds timeless elegance, intricate detailing, and a touch of luxury to every entrance.',
-    img: '/products/Ganesh door handle.avif',
-    link: '/products/Ganesh door handle.pdf',
-    category: 'other',
-  },
+  // {
+  //   product_no: 13,
+  //   name: 'Brass Hinges',
+  //   description:
+  //     'Brass hinges are durable hardware components used to attach doors, cabinets, and windows securely. Made from high-quality brass, they resist corrosion and last long.',
+  //   img: '/products/Brass Hinges.avif',
+  //   link: '/products/Brass Hinges.pdf',
+  //   category: 'hinges',
+  // },
+  // {
+  //   product_no: 14,
+  //   name: 'Ganesh Door Handle',
+  //   description:
+  //     'A divine, golden design that blends tradition with modern interiors, this door handle adds timeless elegance, intricate detailing, and a touch of luxury to every entrance.',
+  //   img: '/products/Ganesh door handle.avif',
+  //   link: '/products/Ganesh door handle.pdf',
+  //   category: 'other',
+  // },
 ];
 
 const categories = [
@@ -181,7 +181,7 @@ const ProductGrid: React.FC = () => {
             {categories.map((cat) => (
               <button
                 key={cat.key}
-                className={`text-2xl cursor-pointer ${
+                className={`text-2xl cursor-pointer transition-all duration-300 hover:scale-105 ${
                   activeCategory === cat.key
                     ? 'font-bold text-black'
                     : 'font-semibold text-[#676767]'
@@ -203,49 +203,49 @@ const ProductGrid: React.FC = () => {
               transition={{ duration: 0.3, ease: 'easeOut' }}
               className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8'
             >
-             {filteredProducts.map((product) => (
-             <motion.div
-             key={product.product_no}
-             layout
-             initial={{ opacity: 0, scale: 0.95 }}
-             animate={{ opacity: 1, scale: 1 }}
-             exit={{ opacity: 0, scale: 0.95 }}
-             transition={{ duration: 0.25 }}
-             className="relative trending-product-grid-item shadow cursor-pointer"
-             onClick={() => window.open(product.link, "_blank", "noopener,noreferrer")}
-            >
-              <div className="image-padding bg-amber-100">
-              <img
-              src={product.img}
-               alt={product.name}
-               className="w-full h-full object-contain"
-              />
-            </div>
+              {filteredProducts.map((product) => (
+                <div
+                  key={product.product_no}
+                  className='relative trending-product-grid-item shadow cursor-pointer'
+                  onClick={() =>
+                    window.open(product.link, '_blank', 'noopener,noreferrer')
+                  }
+                >
+                  <div className='image-padding bg-amber-100'>
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      className='w-full h-full object-contain'
+                    />
+                  </div>
 
-              <div className="product-content">
-              <h5 className="text-3xl font-semibold product-grid-item-heading">
-             {product.name}
-             </h5>
-            <p className="text-xl product-description">{product.description}</p>
-            </div>
+                  <div className='product-content'>
+                    <h5 className='text-3xl font-semibold product-grid-item-heading'>
+                      {product.name}
+                    </h5>
+                    <p className='text-xl product-description'>
+                      {product.description}
+                    </p>
+                  </div>
 
-           <div className="product-action">
-           <div className="product-btn">
-         <span className="btn-primary whitespace-nowrap">Know More</span>
-          <Link
-          href="/contact"
-          className="btn btn-product inline-block"
-          onClick={(e) => e.stopPropagation()}
-        >
-          Enquire
-        </Link>
-      </div>
-    </div>
-  </motion.div>
-))}
-
-  </motion.div>
-</AnimatePresence>
+                  <div className='product-action'>
+                    <div className='product-btn'>
+                      <span className='btn-primary whitespace-nowrap'>
+                        Know More
+                      </span>
+                      <Link
+                        href='/contact'
+                        className='btn btn-product inline-block'
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Enquire
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
           {/* CTA Buttons */}
           <div className='products-cta mt-10'>
             <Link href='/contact'>
