@@ -87,32 +87,75 @@ const Header = () => {
                         SS Hinges (Premium / Welded)
                       </Link>
                     </li>
-                    <li>Mortise Locks</li>
-                    <li>Door Handles</li>
-                    <li>Aldrops</li>
-                    <li>Tower Bolts</li>
-                    <li>Door Stoppers</li>
-                    <li>Door Chain</li>
-
-                    <li>Cabinet Handles</li>
+                    <li>
+                      <Link href='/products/Mortise Locks.pdf' target='_blank'>
+                        Mortise Locks
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/products/Door Handles.pdf' target='_blank'>
+                        Door Handles
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/products/Aldrop.pdf' target='_blank'>
+                        Aldrops
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/products/Tower Bolt.pdf' target='_blank'>
+                        Tower Bolts
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/products/Door Stoper.pdf' target='_blank'>
+                        Door Stoppers
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/products/Door Chain.pdf' target='_blank'>
+                        Door Chain
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/products/Cabinet handles.pdf' target='_blank'>
+                        Cabinet Handles
+                      </Link>
+                    </li>
                   </ul>
                 </div>
                 <div className='dropdown-column'>
                   <h4>Furniture Fittings</h4>
                   <ul>
-                    <li>Knobs</li>
+                    <li>
+                      <Link href='/products/Knobs.pdf' target='_blank'>
+                        Knobs
+                      </Link>
+                    </li>
                   </ul>
                   <div className='divider'>
                     <h4>Hardware Fittings</h4>
                     <ul>
-                      <li>Sofa Legs</li>
-                      <li>Castor Wheels</li>
+                      <li>
+                       <Link href='/products/Sofa Legs.pdf' target='_blank'>
+                        Sofa Legs
+                       </Link>
+                      </li>
+                      <li> 
+                        <Link href='/products/Caster Wheel.pdf' target='_blank'>
+                          Castor Wheels
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                   <div className='divider'>
                     <h4>Kitchen Accessories</h4>
                     <ul>
-                      <li>SS Kitchen Baskets</li>
+                      <li>
+                        <Link href='/products/SS Kitchen Basket.pdf' target='_blank'>
+                          SS Kitchen Baskets
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
