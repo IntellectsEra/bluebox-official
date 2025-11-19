@@ -42,6 +42,9 @@
 .trending-product-grid-item:hover {
   transform: scale(1.03);
 }
+.trending-product-grid-item:active {
+  transform: scale(1.03);
+}
 
 .product-content {
   padding: 1rem 1.75rem 3rem 1.75rem;

@@ -75,6 +75,9 @@ header {
 .btn:hover {
   transform: scale(1.045);
 }
+.btn:active {
+  transform: scale(1.045);
+}
 
 .btn-product {
   padding: 1rem 2.5rem;
@@ -121,6 +124,14 @@ header {
 }
 .btn-primary:hover,
 .btn-secondary:hover {
+  transform: scale(1.045) !important;
+}
+
+.link_all_btn:active {
+  transform: scale(1.045) !important;
+}
+.btn-primary:active,
+.btn-secondary:active {
   transform: scale(1.045) !important;
 }
 
@@ -224,6 +235,13 @@ header {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.logo:active {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:active {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
