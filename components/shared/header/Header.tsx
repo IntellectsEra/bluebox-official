@@ -79,7 +79,14 @@ const Header = () => {
                 <div className='dropdown-column'>
                   <h4>Door Fittings</h4>
                   <ul>
-                    <li>SS Hinges (Premium / Welded)</li>
+                    <li>
+                      <Link
+                        href='/products/SS Hinges Premium Welded.pdf'
+                        target='_blank'
+                      >
+                        SS Hinges (Premium / Welded)
+                      </Link>
+                    </li>
                     <li>Mortise Locks</li>
                     <li>Door Handles</li>
                     <li>Aldrops</li>
