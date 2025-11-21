@@ -10,6 +10,7 @@ import PhoneInput from 'react-phone-number-input/input';
 import { getCountries, getCountryCallingCode } from 'react-phone-number-input';
 import type { Country } from 'react-phone-number-input';
 import dynamic from 'next/dynamic';
+import { toast } from 'sonner';
 
 /* ---------------------------------------------------------- */
 /* -------------------------- TYPES --------------------------- */
@@ -131,13 +132,13 @@ export default function Contact() {
       });
 
       if (!res.ok) {
-        alert('Something went wrong. Please try again.');
+        toast('Something went wrong. Please try again.');
         return;
       }
 
       console.log(payload);
 
-      alert('Your message has been sent successfully! 🎉');
+      toast('Your message has been sent successfully! 🎉');
 
       /* ------------------------------------------- */
       /* RESET FIX → keep India + phone code intact  */
@@ -158,7 +159,7 @@ export default function Contact() {
       setValue('phone', defaultCode); // force phone to +91
     } catch (err) {
       console.error(err);
-      alert('Error sending message.');
+      toast('Error sending message.');
     }
   };
 
@@ -171,7 +172,9 @@ export default function Contact() {
       <section className='contact'>
         <div className='container'>
           <div className='contact-grid'>
-            <ContactContent />
+            <div>
+              <ContactContent />
+            </div>
 
             <div className='contact-grid-items-form'>
               <h4>Get a Quote</h4>
