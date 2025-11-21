@@ -1,6 +1,6 @@
 'use client';
 
-import { PlusCircle, Trash2 } from 'lucide-react';
+import { PlusCircle } from 'lucide-react';
 import Reviews from '../reviews/Reviews';
 import './Contact.css';
 import { JSX, Suspense, useEffect, useMemo, useState } from 'react';
@@ -26,11 +26,6 @@ interface FormValues {
   email: string;
   country: Country;
   phone: string;
-}
-
-interface ProductRow {
-  product: string;
-  quantity: string;
 }
 
 /* Typed react-select */
@@ -59,9 +54,7 @@ const allProducts: string[] = [
 ];
 
 export default function Contact() {
-  const [products, setProducts] = useState<ProductRow[]>([
-    { product: '', quantity: '10' },
-  ]);
+  const [products, setProducts] = useState<string[]>(['']);
 
   const { register, setValue, watch, handleSubmit, reset } =
     useForm<FormValues>({
@@ -99,49 +92,28 @@ export default function Contact() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const selectedProduct = params.get('product');
-
-    if (selectedProduct) {
-      setProducts([{ product: selectedProduct, quantity: '10' }]);
-    }
+    setProducts(selectedProduct ? [selectedProduct] : ['']);
 
     const defaultCode = '+' + getCountryCallingCode('IN');
     setValue('phone', defaultCode);
   }, [setValue]);
 
   /* ---------------- PRODUCT HANDLERS ---------------- */
-  const handleAddProduct = () =>
-    setProducts((prev) => [...prev, { product: '', quantity: '10' }]);
+  const handleAddProduct = () => setProducts((prev) => [...prev, '']);
 
   const handleProductChange = (index: number, value: string) => {
     const updated = [...products];
-    updated[index].product = value;
+    updated[index] = value;
     setProducts(updated);
-  };
-
-  const handleQuantityChange = (index: number, value: string) => {
-    const updated = [...products];
-    updated[index].quantity = value;
-    setProducts(updated);
-  };
-
-  const deleteProductRow = (index: number) => {
-    setProducts((prev) => prev.filter((_, i) => i !== index));
   };
 
   const getAvailableProducts = (current: string) =>
-    allProducts.filter(
-      (p) => !products.some((r) => r.product === p) || p === current
-    );
-
-  /* Block adding new product until all rows are filled */
-  const canAddMore = products.every(
-    (p) => p.product.trim() !== '' && p.quantity.trim() !== ''
-  );
+    allProducts.filter((p) => !products.includes(p) || p === current);
 
   /* ---------------- SUBMIT TO FORMSPREE ---------------- */
   const onSubmit = async (data: FormValues) => {
     const productList = products
-      .map((p, i) => `Product ${i + 1}: ${p.product} (${p.quantity})`)
+      .map((p, i) => `Product ${i + 1}: ${p}`)
       .join('\n');
 
     const payload = {
@@ -164,20 +136,27 @@ export default function Contact() {
         return;
       }
 
+      console.log(payload);
+
       toast('Your message has been sent successfully! 🎉');
 
-      /* RESET */
+      /* ------------------------------------------- */
+      /* RESET FIX → keep India + phone code intact  */
+      /* ------------------------------------------- */
+
       reset({
         name: '',
         email: '',
         country: 'IN' as Country,
-        phone: '',
+        phone: '', // temporary
       });
 
-      setProducts([{ product: '', quantity: '10' }]);
+      // Reset product list
+      setProducts(['']);
 
+      // Restore Indian phone code
       const defaultCode = '+' + getCountryCallingCode('IN');
-      setValue('phone', defaultCode);
+      setValue('phone', defaultCode); // force phone to +91
     } catch (err) {
       console.error(err);
       toast('Error sending message.');
@@ -188,7 +167,6 @@ export default function Contact() {
   /* ------------------------- JSX ----------------------------- */
   /* ---------------------------------------------------------- */
 
-  console.log('products', products);
   return (
     <>
       <section className='contact'>
@@ -266,34 +244,42 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* PRODUCT LOOP */}
-                  <div className='flex flex-col gap-4 '>
-                    {products.map((item, index) => (
+                  {/* PRODUCT SELECTION */}
+                  <div className='flex flex-col gap-4'>
+                    {products.map((prod, index) => (
                       <div
                         key={index}
-                        className={`w-full grid grid-cols-1 ${
-                          products?.length > 1
-                            ? 'md:grid-cols-[2fr_1fr_2rem]'
-                            : 'md:grid-cols-[2fr_1fr] '
-                        } items-end gap-6`}
+                        className='w-full grid grid-cols-1 md:grid-cols-[2fr_1.25fr] gap-6'
                       >
-                        {/* PRODUCT SELECT */}
-                        <div className='input-select-box w-full flex flex-col gap-3'>
+                        <div className=' input-select-box w-full flex flex-col gap-3'>
                           <label>
                             Product {index + 1}
                             <span style={{ color: '#FF1F1F' }}>*</span>
                           </label>
-
+                          {/* <select
+                          value={prod}
+                          required
+                          onChange={(e) =>
+                            handleProductChange(index, e.target.value)
+                          }
+                        >
+                          <option value=''>Select a product</option>
+                          {getAvailableProducts(prod).map((p) => (
+                            <option key={p} value={p}>
+                              {p}
+                            </option>
+                          ))}
+                        </select> */}
                           <div className='select-box'>
                             <select
-                              value={item.product}
+                              value={prod}
                               required
                               onChange={(e) =>
                                 handleProductChange(index, e.target.value)
                               }
                             >
                               <option value=''>Select a product</option>
-                              {getAvailableProducts(item.product).map((p) => (
+                              {getAvailableProducts(prod).map((p) => (
                                 <option key={p} value={p}>
                                   {p}
                                 </option>
@@ -302,21 +288,13 @@ export default function Contact() {
                           </div>
                         </div>
 
-                        {/* QUANTITY SELECT */}
-                        <div className='input-select-box w-full flex flex-col gap-3'>
+                        <div className=' input-select-box w-full flex flex-col gap-3'>
                           <label>
                             Quantity (MOQ)
                             <span style={{ color: '#FF1F1F' }}>*</span>
                           </label>
-
                           <div className='select-box'>
-                            <select
-                              value={item.quantity}
-                              required
-                              onChange={(e) =>
-                                handleQuantityChange(index, e.target.value)
-                              }
-                            >
+                            <select name={`quantity_${index}`} required>
                               <option>10</option>
                               <option>20</option>
                               <option>30</option>
@@ -325,42 +303,22 @@ export default function Contact() {
                             </select>
                           </div>
                         </div>
-
-                        {/* DELETE BUTTON */}
-                        {products.length > 1 && (
-                          <div className='w-8 flex items-center justify-center '>
-                            <button
-                              type='button'
-                              onClick={() => deleteProductRow(index)}
-                              className='p-2 text-red-600 hover:text-red-800 cursor-pointer pb-2'
-                            >
-                              <Trash2 size={20} />
-                            </button>
-                          </div>
-                        )}
                       </div>
                     ))}
                   </div>
 
                   {/* ADD PRODUCT */}
-
                   <div className='pt-2'>
-                    {products?.length < 12 && (
-                      <div
-                        className={`new-product ${
-                          !canAddMore ? 'disabled' : ''
-                        }`}
-                        onClick={canAddMore ? handleAddProduct : undefined}
-                      >
-                        <PlusCircle className='w-7 h-7 text-blue-700 cursor-pointer' />
-                        <span>Add New Product</span>
-                      </div>
-                    )}
+                    {' '}
+                    <div className='new-product ' onClick={handleAddProduct}>
+                      <PlusCircle className='w-7 h-7 text-blue-700 cursor-pointer' />
+                      <span>Add New Product</span>
+                    </div>
                   </div>
 
                   {/* SUBMIT */}
-                  <div className='contact-form-btn '>
-                    <button className='btn large ' type='submit'>
+                  <div className='contact-form-btn'>
+                    <button className='btn large' type='submit'>
                       Enquiry
                     </button>
                   </div>

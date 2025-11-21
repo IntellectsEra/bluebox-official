@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 
@@ -52,6 +52,11 @@ export default function ContactContent() {
             No.39, Ground Floor, Ambedkar Street, Aparna Nagar, Ayappakkam,
             Chennai - 600077.
           </p>
+        </motion.div>
+
+        <motion.div variants={item} className='contact-info-item'>
+          <Mail className='contact-icon' />
+          <p>enquiry@bluebox.com</p>
         </motion.div>
 
         <motion.div variants={item} className='contact-info-item'>
