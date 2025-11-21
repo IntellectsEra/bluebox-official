@@ -1,10 +1,10 @@
 'use client';
 
 import { PlusCircle } from 'lucide-react';
-import Reviews from '../reviews/Reviews';
+import Reviews from '../../reviews/Reviews';
 import './Contact.css';
 import { JSX, Suspense, useEffect, useMemo, useState } from 'react';
-import ContactContent from './ContactContent';
+import ContactContent from '../ContactContent';
 import { useForm } from 'react-hook-form';
 import PhoneInput from 'react-phone-number-input/input';
 import { getCountries, getCountryCallingCode } from 'react-phone-number-input';
@@ -249,7 +249,7 @@ export default function Contact() {
                           Product {index + 1}
                           <span style={{ color: '#FF1F1F' }}>*</span>
                         </label>
-                        {/* <select
+                        <select
                           value={prod}
                           required
                           onChange={(e) =>
@@ -262,23 +262,7 @@ export default function Contact() {
                               {p}
                             </option>
                           ))}
-                        </select> */}
-                        <div className='select-box'>
-                          <select
-                            value={prod}
-                            required
-                            onChange={(e) =>
-                              handleProductChange(index, e.target.value)
-                            }
-                          >
-                            <option value=''>Select a product</option>
-                            {getAvailableProducts(prod).map((p) => (
-                              <option key={p} value={p}>
-                                {p}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
+                        </select>
                       </div>
 
                       <div className='input-box'>
@@ -286,15 +270,13 @@ export default function Contact() {
                           Min. Order Quantity (MOQ)
                           <span style={{ color: '#FF1F1F' }}>*</span>
                         </label>
-                        <div className='select-box'>
-                          <select name={`quantity_${index}`} required>
-                            <option>10</option>
-                            <option>20</option>
-                            <option>30</option>
-                            <option>40</option>
-                            <option>50</option>
-                          </select>
-                        </div>
+                        <select name={`quantity_${index}`} required>
+                          <option>10</option>
+                          <option>20</option>
+                          <option>30</option>
+                          <option>40</option>
+                          <option>50</option>
+                        </select>
                       </div>
                     </div>
                   ))}

@@ -169,6 +169,37 @@
   text-align: center;
 }
 
+.select-box {
+  position: relative;
+}
+
+.select-box select {
+  appearance: none; /* remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f5f8fa;
+  border: 1px solid #cbd6e2;
+  border-radius: 4px;
+  width: 100%;
+  padding: 1.5rem;
+  padding-right: 3rem; /* space for arrow */
+  font-size: 1.625rem;
+}
+
+/* CUSTOM ARROW */
+.select-box::after {
+  content: '';
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+
 /* .contact-form-btn button {
   background-color: var(--bg-btn);
   color: var(--color-white);
@@ -230,8 +261,8 @@
   border: 1px solid #cbd6e2 !important;
   border-radius: 4px !important;
   padding: 4px !important;
-  min-height: 5rem !important;  
-  height:5.5rem !important;
+  min-height: 5rem !important;
+  height: 5.5rem !important;
   box-shadow: none !important;
 }
 
@@ -245,13 +276,9 @@
   color: #000 !important;
 }
 
-
 .react-select__indicator-separator {
   display: none !important;
 }
-
-
-
 
 @media screen and (max-width: 1024px) {
   .contact-grid {
