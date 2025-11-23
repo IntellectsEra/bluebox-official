@@ -169,7 +169,7 @@ const Header = () => {
             </li>
           </ul>
           <div className='nav-cta'>
-            <Link href='/'>
+            <Link href='/products/Overall.pdf' target='_blank'>
               <button className='btn small whitespace'>
                 Download Brochures{' '}
               </button>

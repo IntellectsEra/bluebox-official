@@ -56,7 +56,7 @@ export default function ContactContent() {
 
         <motion.div variants={item} className='contact-info-item'>
           <Mail className='contact-icon' />
-          <p>enquiry@bluebox.com</p>
+          <p>enquiry@blubox.com</p>
         </motion.div>
 
         <motion.div variants={item} className='contact-info-item'>
