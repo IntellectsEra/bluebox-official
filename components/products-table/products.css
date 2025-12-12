@@ -1,0 +1,282 @@
+
+/* PRODUCT HERO SECTION                           */
+/* --------------------------------------------- */
+
+.product-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.hero-image {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+
+.hero-title {
+  font-size: 46px;
+  font-weight: 700;
+  color: #2459b9;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #000000;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+
+.hero-buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.contact-btn {
+  background-color: #2459b9;
+  color: #ffffff;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brochure-btn {
+  border: 2px solid black;
+  color: #4b5563;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.hero-shadow {
+  width: 180px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.30);
+  filter: blur(18px);
+  border-radius: 50%;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  opacity: 0.55;
+}
+
+/* SPECIFICATION TABLE                            */
+/* --------------------------------------------- */
+
+
+.spec-table-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #2459b9;
+  border-radius: 12px;
+  background: #2459b9 !important;
+  margin: 0 auto;
+  max-width: 950px;
+}
+
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.spec-header {
+  background-color: #e8f0fb;
+  padding: 25px 26px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2459b9;
+  border-bottom: 2px solid #2459b9;
+}
+
+.spec-header-left {
+  border-right: 2px solid #2459b9;
+  width: 35%;
+}
+
+.spec-header-right {
+  width: 65%;
+}
+
+
+.spec-row {
+  vertical-align: top;
+}
+
+
+.spec-cell {
+  padding: 12px 18px !important;
+  font-size: 20px;
+  font-weight: 600;
+  color: #212b36;
+  background-color: #e8f0fb;
+}
+
+.spec-cell-left {
+  border-right: 2px solid #2459b9;
+}
+
+.spec-cell-right {
+  width: 65%;
+}
+
+/* VALUES — PERFECT SPACING LIKE SAMPLE */
+.spec-value {
+  margin: 4px 0 !important;
+  line-height: 30px !important;
+  font-weight: 500;
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+  .section-inner {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  /* Center the product image */
+  .hero-image-container {
+    display: flex;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* Keep image size correct */
+  .hero-image {
+    margin: 0 auto !important;
+  }
+
+  /* Align text left */
+  .hero-title,
+  .hero-description,
+  .hero-buttons {
+    text-align: left !important;
+    width: 100% !important;
+  }
+
+  /* Align buttons left */
+  .hero-buttons {
+    justify-content: flex-start !important;
+  }
+
+  /* Table full width with side padding */
+  .spec-table-wrapper {
+    width: 100% !important;
+    margin-top: 40px !important;
+  }
+}
+
+
+
+
+@media (max-width: 640px) {
+
+  /* Reduce table overall width */
+  .spec-table-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    border-width: 1.5px !important;
+  }
+
+  /* Reduce padding inside table */
+  .spec-cell,
+  .spec-header {
+    padding: 10px 12px !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Reduce label width so text wraps properly */
+  .spec-header-left,
+  .spec-cell-left {
+    width: 40% !important;
+  }
+
+  .spec-header-right,
+  .spec-cell-right {
+    width: 60% !important;
+  }
+
+  /* Fix bullet spacing on small screens */
+  .spec-value::before {
+    font-size: 14px !important;
+    margin-right: 4px !important;
+  }
+
+  /* Make multi-line values cleaner */
+  .spec-value {
+    line-height: 22px !important;
+    margin: 2px 0 !important;
+    font-size: 14px !important;
+  }
+
+  
+  .hero-buttons {
+    display: flex;
+    gap: 14px !important;
+  }
+
+  /* Reduce button padding and font size */
+  .contact-btn,
+  .brochure-btn {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;  /* Prevents text from breaking into 2 lines */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+ 
+  .section-inner,
+  .container,
+  .product-layout,
+  .product-page-wrapper {
+    display: block !important;
+  }
+
+  
+  .product-hero-container {
+    width: 100% !important;
+    margin-bottom: 40px !important;
+  }
+
+  
+  .spec-table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 30px !important;
+  }
+
+  
+}
+
+

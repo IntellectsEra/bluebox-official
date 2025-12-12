@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "ss-hinges-premium-welded",
+    "title": "SS Hinges Premium Welded",
+    "image": "/products/SS Hinge.png",
+    "description": "SS Hinges Premium Welded are durable stainless steel hinges built for heavy-duty use, ensuring smooth movement and long-term rust resistance.",
+    "brochure": "/bluebox-brochures/SS Hinges Premium Welded.pdf",
+
+    "specifications": [
+      {
+        "label": "Product Name",
+        "values": ["SS Hinges Premium Welded"]
+      },
+      {
+        "label": "Material",
+        "values": ["Stainless Steel"]
+      },
+      {
+        "label": "Grade",
+        "values": ["202", "304"]
+      },
+      {
+        "label": "Finish Method",
+        "values": ["Polishing & Lacquered"]
+      },
+      {
+        "label": "Finish",
+        "values": ["Glossy / Matt / Antique"]
+      },
+      {
+        "label": "Size",
+        "values": ["50mm", "200mm"]
+      },
+      {
+        "label": "Application",
+        "values": [
+          "Wooden doors, Plywood doors,",
+          "PVC doors & All other wooden doors"
+        ]
+      },
+      {
+        "label": "MOQ",
+        "values": ["30 Cartons"]
+      }
+    ]
+  }
+]
