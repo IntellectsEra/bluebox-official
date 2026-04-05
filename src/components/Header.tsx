@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Products", href: "/products" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Blogs", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -37,7 +38,7 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-4">
             <span className="font-body uppercase tracking-widest text-gold text-[10px] font-bold hidden sm:block">
-              Est. Since 2012 — Chennai, India
+              Since 2012 — Chennai, India
             </span>
             <a
               href="/BluBox-Brochure.pdf"

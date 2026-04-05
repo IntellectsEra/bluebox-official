@@ -66,7 +66,7 @@ export default function HeroSlider() {
     <section className="relative overflow-hidden" style={{ background: "#0B1F3A" }}>
       {/* Outer Navy Frame */}
       <div className="p-4 md:p-6 bg-navy">
-        <div className="relative overflow-hidden" style={{ height: "clamp(380px, 60vh, 620px)" }}>
+        <div className="relative overflow-hidden" style={{ height: "clamp(380px, 50vh, 620px)" }}>
 
           {/* Slides */}
           {SLIDES.map((s, i) => (
@@ -108,7 +108,7 @@ export default function HeroSlider() {
                   {slide.cta}
                 </Link>
                 <a href="tel:+919884411134" className="btn-outline-gold text-sm">
-                  Call Now
+                  Whatsapp Now
                 </a>
               </div>
             </div>

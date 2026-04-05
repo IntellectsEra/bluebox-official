@@ -5,6 +5,7 @@ const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Products", href: "/products" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Blogs", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -145,7 +146,7 @@ export default function Footer() {
             © IntellectsEra Technology Pvt Ltd 2026. All rights reserved.
           </span>
           <span className="uppercase tracking-widest text-[10px]">
-            Chennai, India · Est. 2012
+            Since 2012 - Chennai, India
           </span>
         </div>
       </div>

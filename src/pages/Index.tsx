@@ -36,11 +36,12 @@ const FEATURES = [
 const HOME_PRODUCTS = products.slice(0, 6);
 
 const CATEGORY_LINKS = [
-  { name: "Door Handles", href: "/products?category=door-handles" },
-  { name: "Door Chain", href: "/products?category=other" },
-  { name: "Door Stoppers", href: "/products?category=other" },
-  { name: "Aldrops", href: "/products?category=other" },
   { name: "SS Hinges", href: "/products?category=hinges" },
+  { name: "Mortise Locks", href: "/products?category=mortise-lock" },
+  { name: "Door Handles", href: "/products?category=door-handles" },
+  { name: "Castor Wheels", href: "/products?category=other" },
+  { name: "Glass Fittings", href: "/products?category=other" },
+  
 ];
 
 export default function Index() {
@@ -56,20 +57,21 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left: Image */}
-            <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
+            <div className="relative overflow-hidden" style={{ minHeight: "300px" }}>
               <img
                 src={whyChooseImg}
                 alt="Premium door hardware installed in luxury interior"
                 className="w-full h-full object-cover"
-                style={{ minHeight: "520px" }}
+                style={{ minHeight: "300px" }}
               />
               {/* Gold corner accent */}
               <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-8 py-5">
-                <div className="flex gap-8">
+                <div className="flex items-center justify-center gap-8">
                   {[
                     { value: "12+", label: "Years of Excellence" },
                     { value: "500+", label: "Products" },
-                    { value: "50+", label: "Export Destinations" },
+                    { value: "5+", label: "Export Destinations" },
+                    { value: "1000+", label: "Happy Clients" },
                   ].map((s, i) => (
                     <div key={i} className="text-center">
                       <div className="font-display text-2xl font-bold text-gold leading-none">{s.value}</div>
@@ -102,7 +104,7 @@ export default function Index() {
               </div>
               <Link to="/about" className="btn-primary text-sm inline-flex items-center gap-2 self-start">
                 <ArrowRight size={14} />
-                Learn About Us
+                More About Us
               </Link>
             </div>
           </div>
@@ -110,7 +112,7 @@ export default function Index() {
       </section>
 
       {/* ─── Our Features ─────────────────────────────────── */}
-      <section className="py-0 bg-navy border-b border-border-subtle overflow-hidden">
+      <section className="py-12 bg-navy border-b border-border-subtle overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left: Text + Cards */}
@@ -151,7 +153,7 @@ export default function Index() {
               {/* Overlay stamp */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gold p-6 text-center" style={{ background: "rgba(11,31,58,0.75)" }}>
                 <div className="font-body uppercase tracking-[0.3em] text-gold text-[10px] font-bold mb-2">Made in India</div>
-                <div className="font-display text-3xl text-white font-semibold">Est. 2012</div>
+                <div className="font-display text-3xl text-white font-semibold">Since 2012</div>
                 <div className="font-body uppercase tracking-[0.2em] text-white/60 text-[9px] mt-1">Chennai, Tamil Nadu</div>
               </div>
             </div>
@@ -160,9 +162,9 @@ export default function Index() {
       </section>
 
       {/* ─── Products Section ─────────────────────────────── */}
-      <section className="bg-white border-b border-border-subtle">
+      <section className="bg-white border-b border-border-subtle pt-2">
         {/* Products Banner Image */}
-        <div className="relative overflow-hidden" style={{ height: "280px" }}>
+        <div className="relative overflow-hidden" style={{ height: "180px" }}>
           <img
             src={productsBannerImg}
             alt="BluBox hardware collection including door handles, hinges, locks, and knobs"

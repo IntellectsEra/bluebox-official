@@ -32,13 +32,13 @@ export default function Testimonials() {
   return (
     <section className="relative overflow-hidden bg-navy py-[8vh]">
       {/* Background image with dark overlay */}
-      <img
+      {/* <img
         src={interiorShowcaseImg}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ filter: "brightness(0.15)", mixBlendMode: "luminosity" }}
-      />
+      /> */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-14">
