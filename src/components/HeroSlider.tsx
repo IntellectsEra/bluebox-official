@@ -45,15 +45,21 @@ export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
 
-  const goTo = useCallback((index: number) => {
-    if (animating) return;
-    setAnimating(true);
-    setCurrent(index);
-    setTimeout(() => setAnimating(false), 600);
-  }, [animating]);
+  const goTo = useCallback(
+    (index: number) => {
+      if (animating) return;
+      setAnimating(true);
+      setCurrent(index);
+      setTimeout(() => setAnimating(false), 600);
+    },
+    [animating],
+  );
 
   const prev = () => goTo((current - 1 + SLIDES.length) % SLIDES.length);
-  const next = useCallback(() => goTo((current + 1) % SLIDES.length), [current, goTo]);
+  const next = useCallback(
+    () => goTo((current + 1) % SLIDES.length),
+    [current, goTo],
+  );
 
   useEffect(() => {
     const timer = setInterval(next, 5000);
@@ -63,17 +69,25 @@ export default function HeroSlider() {
   const slide = SLIDES[current];
 
   return (
-    <section className="relative overflow-hidden" style={{ background: "#0B1F3A" }}>
+    <section
+      className="relative overflow-hidden"
+      style={{ background: "#0B1F3A" }}
+    >
       {/* Outer Navy Frame */}
       <div className="p-4 md:p-6 bg-navy">
-        <div className="relative overflow-hidden" style={{ height: "clamp(380px, 50vh, 620px)" }}>
-
+        <div
+          className="relative overflow-hidden"
+          style={{ height: "clamp(380px, 50vh, 620px)" }}
+        >
           {/* Slides */}
           {SLIDES.map((s, i) => (
             <div
               key={i}
               className="absolute inset-0 transition-opacity duration-700"
-              style={{ opacity: i === current ? 1 : 0, pointerEvents: i === current ? "auto" : "none" }}
+              style={{
+                opacity: i === current ? 1 : 0,
+                pointerEvents: i === current ? "auto" : "none",
+              }}
             >
               <img
                 src={s.image}
@@ -107,7 +121,12 @@ export default function HeroSlider() {
                 <Link to={slide.href} className="btn-gold text-sm">
                   {slide.cta}
                 </Link>
-                <a href="tel:+919884411134" className="btn-outline-gold text-sm">
+                <a
+                  href="https://wa.me/919884411134?text=Hi, I want to enquire about your hardware products. Please share details and prices."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline-gold text-sm"
+                >
                   Whatsapp Now
                 </a>
               </div>
@@ -148,8 +167,14 @@ export default function HeroSlider() {
       <div className="bg-gold overflow-hidden py-2.5">
         <div className="flex whitespace-nowrap animate-[slideLeft_20s_linear_infinite]">
           {Array.from({ length: 3 }).map((_, i) => (
-            <span key={i} className="font-body font-bold uppercase tracking-widest text-[10px] text-navy px-8">
-              Door Handles &nbsp;·&nbsp; SS Hinges &nbsp;·&nbsp; Mortise Locks &nbsp;·&nbsp; Cabinet Handles &nbsp;·&nbsp; Tower Bolts &nbsp;·&nbsp; Aldrops &nbsp;·&nbsp; Door Chains &nbsp;·&nbsp; Sofa Legs &nbsp;·&nbsp; Kitchen Baskets &nbsp;·&nbsp;
+            <span
+              key={i}
+              className="font-body font-bold uppercase tracking-widest text-[10px] text-navy px-8"
+            >
+              Door Handles &nbsp;·&nbsp; SS Hinges &nbsp;·&nbsp; Mortise Locks
+              &nbsp;·&nbsp; Cabinet Handles &nbsp;·&nbsp; Tower Bolts
+              &nbsp;·&nbsp; Aldrops &nbsp;·&nbsp; Door Chains &nbsp;·&nbsp; Sofa
+              Legs &nbsp;·&nbsp; Kitchen Baskets &nbsp;·&nbsp;
             </span>
           ))}
         </div>

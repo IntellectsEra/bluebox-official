@@ -237,7 +237,7 @@ export default function Contact() {
                               >
                                 <option value="">— Select Product —</option>
                                 {products.map((p) => (
-                                  <option key={p.id} value={p.name}>{p.name}</option>
+                                  <option key={p.id} value={p.refNo}>{p.refNo} - {p.name}</option>
                                 ))}
                               </select>
                             </div>
