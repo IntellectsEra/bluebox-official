@@ -30,7 +30,7 @@ export default function Footer() {
     <footer className="bg-navy text-white">
       {/* ─── Main Footer ─────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1 — Brand */}
           <div className="lg:col-span-1">
             <div className="mb-6">
@@ -71,7 +71,7 @@ export default function Footer() {
           </div>
 
           {/* Col 2 — Quick Links */}
-          <div>
+          <div className="lg:col-span-1">
             <h4 className="font-body font-bold uppercase tracking-[0.15em] text-[11px] text-gold mb-5 border-b border-white/10 pb-3">
               Quick Links
             </h4>
@@ -91,11 +91,11 @@ export default function Footer() {
           </div>
 
           {/* Col 3 — Our Products */}
-          <div>
-            <h4 className="font-body font-bold uppercase tracking-[0.15em] text-[11px] text-gold mb-5 border-b border-white/10 pb-3">
+          <div className="lg:col-span-2">
+            <h4 className="font-body font-bold uppercase tracking-[0.15em] text-[11px] text-gold mb-5 border-b border-white/10 pb-3 ">
               Our Products
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="grid grid-col-1 lg:grid-cols-2 items-center space-y-2.5">
               {PRODUCT_LINKS.map((product) => (
                 <li key={product}>
                   <Link
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
 
           {/* Col 4 — Contact Info */}
-          <div>
+          <div className="lg:col-span-1">
             <h4 className="font-body font-bold uppercase tracking-[0.15em] text-[11px] text-gold mb-5 border-b border-white/10 pb-3">
               Our Office
             </h4>
@@ -122,7 +122,9 @@ export default function Footer() {
                 <br />
                 Ambedkar Street,
                 <br />
-                Aparna Nagar, Ayappakkam,
+                Aparna Nagar,
+                <br />
+                Ayappakkam,
                 <br />
                 Chennai – 600077,
                 <br />

@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import interiorShowcaseImg from "@/assets/interior-showcase.jpg";
 
 const TESTIMONIALS = [
   {
@@ -29,20 +30,25 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F6F1] py-[8vh]">
+    <section className="relative overflow-hidden bg-navy py-[8vh]">
+      {/* Background image with dark overlay */}
+      {/* <img
+        src={interiorShowcaseImg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ filter: "brightness(0.15)", mixBlendMode: "luminosity" }}
+      /> */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-14">
           <div className="section-divider">
-            <span className="section-label text-[#B8860B]">Client Voices</span>
+            <span className="section-label text-gold">Client Voices</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#1A1A2E] mb-3">
+          <h2 className="font-display text-4xl md:text-5xl font-semibold text-white mb-3">
             Our Testimonials
           </h2>
-          <p
-            className="font-body text-[#888] text-lg italic font-light"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
+          <p className="font-body text-white/60 text-lg italic font-light" style={{ fontFamily: "var(--font-display)" }}>
             Where Trust Begins
           </p>
         </div>
@@ -52,35 +58,25 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <div
               key={i}
-              className="bg-white border border-[#E0D8CC] p-6 rounded-sm animate-slide-up hover:border-[#D4AF37] transition-colors duration-250"
+              className="bg-white/5 border border-white/10 p-6 animate-slide-up hover:border-gold transition-colors duration-250"
               style={{ animationDelay: `${i * 80}ms` }}
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star
-                    key={j}
-                    size={14}
-                    className="fill-[#D4AF37] text-[#D4AF37]"
-                  />
+                  <Star key={j} size={14} className="fill-gold text-gold" />
                 ))}
               </div>
-
-              <p className="text-[#555] font-body text-sm leading-relaxed mb-5 italic">
+              <p className="text-white/80 font-body text-sm leading-relaxed mb-5 italic">
                 "{t.text}"
               </p>
-
-              <div className="flex items-center gap-3 border-t border-[#EEE8DF] pt-4">
-                <div className="w-9 h-9 bg-[#1A1A2E] flex items-center justify-center font-body font-bold text-[#D4AF37] text-sm shrink-0 rounded-sm">
+              <div className="flex items-center gap-3 border-t border-white/10 pt-4">
+                <div className="w-9 h-9 bg-gold flex items-center justify-center font-body font-bold text-navy text-sm shrink-0">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="text-[#1A1A2E] font-body font-bold text-sm">
-                    {t.name}
-                  </div>
-                  <div className="text-[#999] font-body text-xs uppercase tracking-wide">
-                    {t.company}
-                  </div>
+                  <div className="text-white font-body font-bold text-sm">{t.name}</div>
+                  <div className="text-white/50 font-body text-xs uppercase tracking-wide">{t.company}</div>
                 </div>
               </div>
             </div>

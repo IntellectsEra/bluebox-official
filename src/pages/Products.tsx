@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
-import { products, CATEGORIES } from "@/data/products";
+import { products, CATEGORIES, CATEGORIES_MAIN } from "@/data/products";
 import { Search, SlidersHorizontal } from "lucide-react";
 import productsBannerImg from "/main/products.jpeg";
 
@@ -14,8 +14,10 @@ export default function Products() {
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
-      const matchesCat = activeCategory === "all" || p.category === activeCategory;
-      const matchesSearch = search === "" || p.name.toLowerCase().includes(search.toLowerCase());
+      const matchesCat =
+        activeCategory === "all" || p.category === activeCategory;
+      const matchesSearch =
+        search === "" || p.name.toLowerCase().includes(search.toLowerCase());
       return matchesCat && matchesSearch;
     });
   }, [activeCategory, search]);
@@ -58,7 +60,9 @@ export default function Products() {
       <div className="bg-white border-b border-border-subtle py-3">
         <div className="max-w-7xl mx-auto px-6">
           <nav className="font-body text-xs text-foreground/50 flex items-center gap-2 uppercase tracking-widest">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+            <Link to="/" className="hover:text-gold transition-colors">
+              Home
+            </Link>
             <span>/</span>
             <span className="text-navy font-bold">Products</span>
           </nav>
@@ -70,9 +74,11 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-6">
           {/* Filter Row */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            {/* Search */}
-            <div className="relative flex-1 max-w-sm">
-              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-navy/40" />
+            {/* <div className="relative w-[15rem]">
+              <Search
+                size={15}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-navy/40"
+              />
               <input
                 type="text"
                 placeholder="Search products..."
@@ -80,18 +86,18 @@ export default function Products() {
                 onChange={(e) => setSearch(e.target.value)}
                 className="form-input pl-9 text-sm py-2.5"
               />
-            </div>
-
+            </div> */}
             {/* Category Filters */}
             <div className="flex flex-wrap gap-2">
-              {CATEGORIES.map((cat) => (
+              {CATEGORIES_MAIN.map((cat) => (
                 <button
                   key={cat.value}
                   onClick={() => setCategory(cat.value)}
                   className={`font-body font-bold uppercase tracking-widest text-[10px] px-4 py-2.5 border transition-colors duration-200
-                    ${activeCategory === cat.value
-                      ? "bg-navy text-white border-navy"
-                      : "bg-white text-navy border-border-subtle hover:border-navy"
+                    ${
+                      activeCategory === cat.value
+                        ? "bg-navy text-white border-navy"
+                        : "bg-white text-navy border-border-subtle hover:border-navy"
                     }`}
                 >
                   {cat.label}
@@ -101,11 +107,28 @@ export default function Products() {
           </div>
 
           {/* Results count */}
-          <div className="flex items-center gap-2 mb-6">
-            <SlidersHorizontal size={13} className="text-navy/40" />
-            <span className="font-body text-sm text-foreground/50 uppercase tracking-wide font-bold">
-              Showing {filtered.length} of {products.length} Products
-            </span>
+          <div className="flex items-end justify-between mb-6">
+            {/* Search */}
+            <div className="relative flex-1 max-w-sm">
+              <Search
+                size={15}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-navy/40"
+              />
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="form-input pl-9 text-sm py-2.5"
+              />
+            </div>
+
+            <div className="flex items-center gap-2 ">
+              <SlidersHorizontal size={13} className="text-navy/40" />
+              <span className="font-body text-sm text-foreground/50 uppercase tracking-wide font-bold">
+                Showing {filtered.length} of {products.length} Products
+              </span>
+            </div>
           </div>
 
           {/* Product Grid */}
@@ -117,8 +140,12 @@ export default function Products() {
             </div>
           ) : (
             <div className="text-center py-20 bg-white border border-border-subtle">
-              <div className="font-display text-3xl text-navy/30 mb-3">No Products Found</div>
-              <p className="font-body text-foreground/50 text-sm">Try adjusting your search or filter criteria.</p>
+              <div className="font-display text-3xl text-navy/30 mb-3">
+                No Products Found
+              </div>
+              <p className="font-body text-foreground/50 text-sm">
+                Try adjusting your search or filter criteria.
+              </p>
             </div>
           )}
         </div>
