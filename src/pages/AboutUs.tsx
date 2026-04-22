@@ -126,7 +126,7 @@ export default function AboutUs() {
             {[
               { value: "12+", label: "Years of Experience" },
               { value: "500+", label: "Products in Catalogue" },
-              { value: "50+", label: "Export Destinations" },
+              { value: "5+", label: "Export Destinations" },
               { value: "1000+", label: "Happy Clients" },
             ].map((stat, i) => (
               <div
@@ -390,7 +390,7 @@ export default function AboutUs() {
                     year: "2019",
                     label: "Launched BluBox Exports, our global arm",
                   },
-                  { year: "2024", label: "50+ export destinations worldwide" },
+                  { year: "2024", label: "5+ export destinations worldwide" },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -423,7 +423,7 @@ export default function AboutUs() {
               <div className="absolute inset-0 bg-navy/50"></div>
               <div className="absolute bottom-0 left-0 right-0 px-8 py-6">
                 <div className="font-body uppercase tracking-[0.2em] text-gold text-[10px] font-bold mb-1">
-                  Exporting to 50+ countries
+                  Exporting to 5+ countries
                 </div>
                 <div className="font-display text-2xl text-white font-semibold">
                   Trusted Globally Since 2012
