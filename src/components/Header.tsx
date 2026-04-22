@@ -41,7 +41,8 @@ export default function Header() {
               Since 2012 — Chennai, India
             </span>
             <a
-              href="/BluBox-Brochure.pdf"
+              href="/documents/Brochure.pdf"
+              target="_blank"
               download
               className="flex items-center gap-1.5 bg-gold text-navy px-4 py-1.5 font-body font-bold uppercase tracking-widest text-[10px] hover:bg-gold-light transition-colors duration-200"
             >

@@ -2,13 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Award, Layers, BadgeCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Globe,
+  Award,
+  Layers,
+  BadgeCheck,
+  Package,
+  Send,
+  Smile,
+} from "lucide-react";
 import aboutBannerImg from "/main/about.jpeg";
 import aboutFactoryImg from "@/assets/about-factory.jpg";
 import factoryFloorImg from "@/assets/factory-floor.jpg";
 import exportShippingImg from "@/assets/export-shipping.jpg";
 import interiorShowcaseImg from "@/assets/interior-showcase.jpg";
 import Commitments from "@/components/Commitments";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
+import gallery6 from "@/assets/gallery-6.jpg";
 
 const WHY_US = [
   {
@@ -40,6 +53,33 @@ const WHY_US = [
   },
 ];
 
+const OFFERINGS = [
+  {
+    icon: <Award size={28} className="text-gold" />,
+    title: "Quality Hardware",
+    desc: "High-performance hardware solutions engineered for durability, precision, and refined aesthetics — designed to meet international standards while delivering reliable performance across diverse applications.",
+    img: gallery3,
+  },
+  {
+    icon: <Package size={28} className="text-gold" />,
+    title: "Secure Packing",
+    desc: "We use export-standard packaging methods to ensure maximum protection against damage, moisture, and handling during transit, guaranteeing products reach international destinations safely and securely.",
+    img: gallery6,
+  },
+  {
+    icon: <Send size={28} className="text-gold" />,
+    title: "Timely Dispatching",
+    desc: "Our streamlined dispatch process ensures every order is handled with precision and shipped on time. With strong coordination across production, packaging, and logistics, we prioritize speed and reliability — supporting smooth and uninterrupted business operations.",
+    img: exportShippingImg,
+  },
+  {
+    icon: <Smile size={28} className="text-gold" />,
+    title: "Customer Satisfaction",
+    desc: "We deliver not just quality products, but a seamless service experience at every stage. From responsive communication to consistent product standards and reliable support, we prioritize trust, transparency, and long-term collaboration — making customer satisfaction the foundation of our business.",
+    img: gallery5,
+  },
+];
+
 export default function AboutUs() {
   return (
     <div className="min-h-screen bg-background">
@@ -47,7 +87,7 @@ export default function AboutUs() {
 
       {/* ─── Hero ─────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden bg-navy"
+        className="relative overflow-hidden bg-navy "
         style={{ minHeight: "520px" }}
       >
         {/* Background image */}
@@ -119,6 +159,81 @@ export default function AboutUs() {
         </div>
       </div>
 
+      {/* ─── Brand Story (split) ────────────────────────────── */}
+      <section className="bg-white border-b border-border-subtle py-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12">
+          {/* Image column */}
+          <div
+            className="lg:col-span-5 relative overflow-hidden"
+            style={{ minHeight: "560px" }}
+          >
+            <img
+              src={aboutFactoryImg}
+              alt="BluBox Enterprises hardware sourcing"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/90 px-6 py-5 border-t-2 border-gold">
+              <div className="font-body uppercase tracking-[0.2em] text-gold text-[10px] font-bold mb-1">
+                Our Story
+              </div>
+              <div className="font-display text-2xl text-white font-semibold leading-tight">
+                Indian Manufacturing.
+                <br />
+                Global Standards.
+              </div>
+            </div>
+          </div>
+
+          {/* Text column */}
+          <div className="lg:col-span-7 px-8 md:px-14 py-16">
+            <div className="section-divider mb-3">
+              <span className="section-label">About Us</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy mb-3">
+              An Export-Focused Hardware Company
+            </h2>
+            <div className="w-14 h-0.5 bg-gold mb-8"></div>
+
+            <div className="space-y-5 font-body text-foreground/75 text-[15px] leading-relaxed">
+              <p>
+                <span className="font-bold text-navy">BluBox Enterprises</span>{" "}
+                is an export-focused company committed to delivering
+                high-quality hardware solutions to global markets. With a strong
+                foundation in the hardware industry, we specialize in sourcing
+                and supplying door hardware, furniture fittings, and modular
+                hardware products that align with international standards of
+                quality, performance, and design.
+              </p>
+              <p>
+                Built on years of hands-on experience, BluBox Enterprises was
+                established with a clear purpose — to bring dependable Indian
+                manufacturing to the global stage. We combine practical industry
+                knowledge with a sharp understanding of evolving market
+                requirements, ensuring that every product reflects durability,
+                precision, and modern functionality.
+              </p>
+              <p>
+                Our strength lies in a well-established network of trusted
+                manufacturers and reputed brands, enabling us to offer a
+                carefully curated range of hardware solutions across
+                residential, commercial, and industrial segments. By maintaining
+                consistency in quality, competitive pricing, and operational
+                efficiency, we position ourselves as a reliable sourcing partner
+                for clients worldwide.
+              </p>
+              <p>
+                At BluBox Enterprises, we view hardware as more than just a
+                utility — it plays a key role in enhancing design, improving
+                usability, and delivering long-term value. As we continue to
+                expand our global presence, we remain focused on building
+                meaningful partnerships, maintaining high standards, and
+                adapting to the dynamic needs of international markets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Our Commitment ───────────────────────────────── */}
       <section className="py-[8vh] bg-white border-b border-border-subtle">
         <div className="max-w-7xl mx-auto px-6">
@@ -132,6 +247,55 @@ export default function AboutUs() {
           </div>
           {/* 2x2 visual cards with images */}
           <Commitments />
+        </div>
+      </section>
+
+      {/* ─── What We Offer ──────────────────────────────────── */}
+      <section className="py-[8vh] bg-white border-b border-border-subtle">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="section-divider">
+              <span className="section-label">What We Offer</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-navy">
+              Engineered Excellence at Every Step
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {OFFERINGS.map((item, i) => (
+              <div
+                key={i}
+                className="group bg-white border border-border-subtle hover:border-gold transition-colors duration-300 animate-slide-up flex flex-col"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <div
+                  className="relative overflow-hidden"
+                  style={{ height: "200px" }}
+                >
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent"></div>
+                  <div className="absolute bottom-3 left-3 w-12 h-12 bg-navy border border-gold/40 flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="font-display text-xl text-navy font-semibold mb-2">
+                    {item.title}
+                  </h3>
+                  <div className="w-8 h-0.5 bg-gold mb-3"></div>
+                  <p className="font-body text-foreground/65 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -57,7 +57,7 @@ export const products: Product[] = [
       "/products/17-4.jpg",
       "/products/17-5.jpg",
     ],
-    pdf: "/products/SS Hinges.pdf",
+    pdf: "/documents/BBX-001.pdf",
     category: "hinges",
     specs: [
       { label: "Material", value: "Stainless Steel" },
@@ -86,7 +86,7 @@ export const products: Product[] = [
       "/products/5-4.jpg",
       "/products/5-5.jpg",
     ],
-    pdf: "/products/Brass Hinges.pdf",
+    pdf: "/documents/BBX-002.pdf",
     category: "hinges",
     specs: [
       { label: "Material", value: "Brass" },
@@ -116,7 +116,7 @@ export const products: Product[] = [
       "/products/2-3.jpg",
       "/products/2-4.jpg",
     ],
-    pdf: "/products/CY Mortise Lock.pdf",
+    pdf: "/documents/BBX-003.pdf",
     category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -143,7 +143,7 @@ export const products: Product[] = [
       "/products/4-3.jpg",
       "/products/4-4.jpg",
     ],
-    pdf: "/products/CY Mortise Lock.pdf",
+    pdf: "/documents/BBX-004.pdf",
     category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -170,7 +170,7 @@ export const products: Product[] = [
       "/products/15-3.jpg",
       "/products/15-4.jpg",
     ],
-    pdf: "/products/CY Mortise Lock.pdf",
+    pdf: "/documents/BBX-005.pdf",
     category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -197,7 +197,7 @@ export const products: Product[] = [
       "/products/21-3.jpg",
       "/products/21-4.jpg",
     ],
-    pdf: "/products/CY Mortise Lock.pdf",
+    pdf: "/documents/BBX-006.pdf",
     category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -224,7 +224,7 @@ export const products: Product[] = [
       "/products/6-3.jpg",
       "/products/6-4.jpg",
     ],
-    pdf: "/products/KY Mortise Lock.pdf",
+    pdf: "/documents/BBX-007.pdf",
     category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -251,7 +251,7 @@ export const products: Product[] = [
       "/products/25-3.jpg",
       "/products/25-4.jpg",
     ],
-    pdf: "/products/KY Mortise Lock.pdf",
+    pdf: "/documents/BBX-008.pdf",
     category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -278,7 +278,7 @@ export const products: Product[] = [
       "/products/26-3.jpg",
       "/products/26-4.jpg",
     ],
-    pdf: "/products/KY Mortise Lock.pdf",
+    pdf: "/documents/BBX-009.pdf",
     category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -305,7 +305,7 @@ export const products: Product[] = [
       "/products/22-3.jpg",
       "/products/22-4.jpg",
     ],
-    pdf: "/products/Rosette Handle.pdf",
+    pdf: "/documents/BBX-010.pdf",
     category: "door-handles",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass / Zinc Alloy" },
@@ -331,7 +331,7 @@ export const products: Product[] = [
       "/products/23-3.jpg",
       "/products/23-4.jpg",
     ],
-    pdf: "/products/Rosette Handle.pdf",
+    pdf: "/documents/BBX-011.pdf",
     category: "door-handles",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass / Zinc Alloy" },
@@ -357,7 +357,7 @@ export const products: Product[] = [
       "/products/1-3.jpg",
       "/products/1-4.jpg",
     ],
-    pdf: "/products/Dead Lock.pdf",
+    pdf: "/documents/BBX-012.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -384,7 +384,7 @@ export const products: Product[] = [
       "/products/13-3.jpg",
       "/products/13-4.jpg",
     ],
-    pdf: "/products/Pin Cylinder.pdf",
+    pdf: "/documents/BBX-013.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Brass / Stainless Steel" },
@@ -407,7 +407,7 @@ export const products: Product[] = [
       "/products/19-3.jpg",
       "/products/19-4.jpg",
     ],
-    pdf: "/products/Pin Cylinder.pdf",
+    pdf: "/documents/BBX-014.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Brass / Stainless Steel" },
@@ -431,7 +431,7 @@ export const products: Product[] = [
       "/products/7-4.jpg",
       "/products/7-5.jpg",
     ],
-    pdf: "/products/Door Stopper.pdf",
+    pdf: "/documents/BBX-015.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel + Rubber Tip" },
@@ -454,7 +454,7 @@ export const products: Product[] = [
       "/products/14-3.jpg",
       "/products/14-4.jpg",
     ],
-    pdf: "/products/Door Stopper.pdf",
+    pdf: "/documents/BBX-016.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel + Rubber Tip" },
@@ -477,7 +477,7 @@ export const products: Product[] = [
       "/products/16-3.jpg",
       "/products/16-4.jpg",
     ],
-    pdf: "/products/Tower Bolt.pdf",
+    pdf: "/documents/BBX-017.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
@@ -501,7 +501,7 @@ export const products: Product[] = [
       "/products/9-3.jpg",
       "/products/9-4.jpg",
     ],
-    pdf: "/products/Stud.pdf",
+    pdf: "/documents/BBX-018.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
@@ -528,7 +528,7 @@ export const products: Product[] = [
       "/products/11-4.jpg",
       "/products/11-5.jpg",
     ],
-    pdf: "/products/Glass D Bracket.pdf",
+    pdf: "/documents/BBX-019.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
@@ -556,7 +556,7 @@ export const products: Product[] = [
       "/products/8-4.jpg",
       "/products/8-5.jpg",
     ],
-    pdf: "/products/F Bracket.pdf",
+    pdf: "/documents/BBX-020.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
@@ -584,7 +584,7 @@ export const products: Product[] = [
       "/products/3-4.jpg",
       "/products/3-5.jpg",
     ],
-    pdf: "/products/Shelf Brackets.pdf",
+    pdf: "/documents/BBX-021.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
@@ -611,7 +611,7 @@ export const products: Product[] = [
       "/products/18-3.jpg",
       "/products/18-4.jpg",
     ],
-    pdf: "/products/Door Pull Handle.pdf",
+    pdf: "/documents/BBX-022.pdf",
     category: "door-handles",
     specs: [
       { label: "Material", value: "Stainless Steel" },
@@ -640,7 +640,7 @@ export const products: Product[] = [
       "/products/10-5.jpg",
       "/products/10-6.jpg",
     ],
-    pdf: "/products/Castor Wheel.pdf",
+    pdf: "/documents/BBX-023.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Rubber Wheel" },
@@ -666,7 +666,7 @@ export const products: Product[] = [
       "/products/20-3.jpg",
       "/products/20-4.jpg",
     ],
-    pdf: "/products/Ball Castor Wheel.pdf",
+    pdf: "/documents/BBX-024.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Chrome Steel Ball" },
@@ -693,7 +693,7 @@ export const products: Product[] = [
       "/products/24-4.jpg",
       "/products/24-5.jpg",
     ],
-    pdf: "/products/Fixed Castor Wheel.pdf",
+    pdf: "/documents/BBX-025.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Rubber Wheel" },
@@ -719,7 +719,7 @@ export const products: Product[] = [
       "/products/12-3.jpg",
       "/products/12-4.jpg",
     ],
-    pdf: "/products/Castor Wheel.pdf",
+    pdf: "/documents/BBX-026.pdf",
     category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Rubber Wheel" },
