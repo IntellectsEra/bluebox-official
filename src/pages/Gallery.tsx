@@ -4,56 +4,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, X } from "lucide-react";
 
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
-import g7 from "@/assets/gallery-7.jpg";
-import g8 from "@/assets/gallery-8.jpg";
-import g9 from "@/assets/gallery-9.jpg";
 import interiorShowcase from "@/assets/interior-showcase.jpg";
-import factoryFloor from "@/assets/factory-floor.jpg";
-import aboutFactory from "@/assets/about-factory.jpg";
 import productsBanner from "@/assets/products-banner.jpg";
-
-type Item = {
-  src: string;
-  title: string;
-  category: "Door Handles" | "Hinges" | "Cabinet" | "Locks" | "Knobs" | "Modular" | "Interiors";
-  span?: "tall" | "wide" | "regular";
-};
-
-const ITEMS: Item[] = [
-  { src: g1, title: "Brushed Brass Lever Handle", category: "Door Handles", span: "tall" },
-  { src: g2, title: "Premium SS Welded Hinges", category: "Hinges" },
-  { src: g3, title: "Modular Kitchen Pulls", category: "Cabinet", span: "tall" },
-  { src: g4, title: "Heritage Mortise Set", category: "Locks" },
-  { src: g5, title: "Classic Brass Knob", category: "Knobs", span: "tall" },
-  { src: g6, title: "SS Kitchen Basket System", category: "Modular" },
-  { src: g7, title: "Sofa Legs in Modern Living", category: "Interiors", span: "tall" },
-  { src: g8, title: "Traditional Aldrop Bolt", category: "Locks" },
-  { src: g9, title: "Hospitality Corridor Hardware", category: "Interiors", span: "tall" },
-  { src: interiorShowcase, title: "Designer Interior Detail", category: "Interiors" },
-  { src: factoryFloor, title: "Manufacturing Floor", category: "Modular" },
-  { src: aboutFactory, title: "Quality Inspection", category: "Hinges" },
-];
-
-const CATEGORIES = ["All", "Door Handles", "Hinges", "Cabinet", "Locks", "Knobs", "Modular", "Interiors"] as const;
+import { CATEGORIES_MAIN, products } from "@/data/products";
 
 export default function Gallery() {
-  const [active, setActive] = useState<(typeof CATEGORIES)[number]>("All");
-  const [lightbox, setLightbox] = useState<Item | null>(null);
+  const [active, setActive] = useState("all");
+  const [lightbox, setLightbox] = useState(null);
 
-  const visible = active === "All" ? ITEMS : ITEMS.filter((i) => i.category === active);
+  const visible =
+    active === "all" ? products : products.filter((i) => i.category === active);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       {/* ─── Hero ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-navy" style={{ minHeight: "420px" }}>
+      <section
+        className="relative overflow-hidden bg-navy"
+        style={{ minHeight: "420px" }}
+      >
         <img
           src={productsBanner}
           alt="Hardware gallery"
@@ -67,7 +37,8 @@ export default function Gallery() {
           </h1>
           <div className="w-16 h-0.5 bg-gold mx-auto mb-6"></div>
           <p className="font-body text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
-            A curated showcase of hardware in real interiors — handles, hinges, locks, and modular fittings that bring spaces to life.
+            A curated showcase of hardware in real interiors — handles, hinges,
+            locks, and modular fittings that bring spaces to life.
           </p>
         </div>
       </section>
@@ -76,7 +47,9 @@ export default function Gallery() {
       <div className="bg-white border-b border-border-subtle py-3">
         <div className="max-w-7xl mx-auto px-6">
           <nav className="font-body text-xs text-foreground/50 flex items-center gap-2 uppercase tracking-widest">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+            <Link to="/" className="hover:text-gold transition-colors">
+              Home
+            </Link>
             <span>/</span>
             <span className="text-navy font-bold">Gallery</span>
           </nav>
@@ -86,19 +59,20 @@ export default function Gallery() {
       {/* ─── Filter Bar ─────────────────────────────────────── */}
       <section className="bg-white border-b border-border-subtle sticky top-[104px] z-30">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-2">
-          {CATEGORIES.map((cat) => {
-            const isActive = active === cat;
+          {CATEGORIES_MAIN.map((cat) => {
+            const isActive = active === cat.value;
             return (
               <button
-                key={cat}
-                onClick={() => setActive(cat)}
+                key={cat.value}
+                onClick={() => setActive(cat.value)}
                 className={`px-4 py-2 font-body uppercase tracking-widest text-[10px] font-bold border transition-colors duration-200
-                  ${isActive
-                    ? "bg-navy text-white border-navy"
-                    : "bg-white text-navy border-border-subtle hover:border-gold hover:text-gold"
+                  ${
+                    isActive
+                      ? "bg-navy text-white border-navy"
+                      : "bg-white text-navy border-border-subtle hover:border-gold hover:text-gold"
                   }`}
               >
-                {cat}
+                {cat.label}
               </button>
             );
           })}
@@ -118,8 +92,8 @@ export default function Gallery() {
               >
                 <div className="overflow-hidden">
                   <img
-                    src={item.src}
-                    alt={item.title}
+                    src={item.images[item.images.length - 1]}
+                    alt={item.name}
                     loading="lazy"
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -130,7 +104,7 @@ export default function Gallery() {
                     {item.category}
                   </div>
                   <div className="font-display text-xl text-white font-semibold leading-tight">
-                    {item.title}
+                    {item.name}
                   </div>
                 </div>
                 {/* Static caption */}
@@ -138,7 +112,9 @@ export default function Gallery() {
                   <div className="font-body uppercase tracking-widest text-[9px] text-gold font-bold mb-1">
                     {item.category}
                   </div>
-                  <div className="font-display text-base text-navy font-semibold">{item.title}</div>
+                  <div className="font-display text-base text-navy font-semibold">
+                    {item.name}
+                  </div>
                 </div>
               </button>
             ))}
@@ -161,18 +137,27 @@ export default function Gallery() {
           style={{ filter: "brightness(0.25)" }}
         />
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 text-center">
-          <div className="section-label text-gold mb-3">Inspired by what you see?</div>
+          <div className="section-label text-gold mb-3">
+            Inspired by what you see?
+          </div>
           <h2 className="font-display text-3xl md:text-4xl text-white font-semibold mb-4">
             Explore the Full Catalogue
           </h2>
           <p className="font-body text-white/70 max-w-2xl mx-auto mb-8 text-[15px] leading-relaxed">
-            From premium SS hinges to modular kitchen baskets — discover hardware engineered for design and built to last.
+            From premium SS hinges to modular kitchen baskets — discover
+            hardware engineered for design and built to last.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link to="/products" className="btn-gold text-sm inline-flex items-center gap-2">
+            <Link
+              to="/products"
+              className="btn-gold text-sm inline-flex items-center gap-2"
+            >
               View All Products <ArrowRight size={14} />
             </Link>
-            <Link to="/contact" className="btn-outline text-sm text-white border-white/40 hover:border-gold hover:text-gold">
+            <Link
+              to="/contact"
+              className="btn-outline text-sm text-white border-white/40 hover:border-gold hover:text-gold"
+            >
               Send an Enquiry
             </Link>
           </div>
@@ -207,7 +192,9 @@ export default function Gallery() {
               <div className="font-body uppercase tracking-widest text-[10px] text-gold font-bold mb-1">
                 {lightbox.category}
               </div>
-              <div className="font-display text-2xl text-white font-semibold">{lightbox.title}</div>
+              <div className="font-display text-2xl text-white font-semibold">
+                {lightbox.title}
+              </div>
             </div>
           </div>
         </div>

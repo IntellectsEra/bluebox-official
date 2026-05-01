@@ -434,10 +434,10 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* ─── Testimonials ─────────────────────────────────── */}
+      {/* ─── Testimonials ──────────────────────────────────────────────── */}
       <Testimonials />
-
       <Footer />
+
     </div>
   );
 }
