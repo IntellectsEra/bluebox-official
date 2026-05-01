@@ -1,54 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { Calendar, ArrowRight } from "lucide-react";
-
-const BLOGS = [
-  {
-    date: "March 10, 2026",
-    category: "Industry",
-    title: "The Rise of Stainless Steel Hardware in Indian Architecture",
-    excerpt: "As modern construction projects increasingly demand durability and aesthetics, SS 304 grade hardware has become the preferred choice for architects and builders across India.",
-    readTime: "4 min read",
-  },
-  {
-    date: "February 18, 2026",
-    category: "Export Guide",
-    title: "How to Source Premium Hardware for Export Projects",
-    excerpt: "Understanding MOQ, grade certifications, and packaging standards is essential for any hardware import-export business. Here's what international buyers need to know.",
-    readTime: "5 min read",
-  },
-  {
-    date: "January 25, 2026",
-    category: "Product Guide",
-    title: "Mortise Locks vs. Cylindrical Locks — What's Right for Your Project?",
-    excerpt: "Both lock types serve different purposes. We break down the technical differences, applications, and cost factors to help you make the right specification decision.",
-    readTime: "6 min read",
-  },
-  {
-    date: "January 8, 2026",
-    category: "Tips",
-    title: "5 Things to Check Before Buying SS Hinges in Bulk",
-    excerpt: "From grade verification to finish quality and load capacity — here are the five most critical quality checks before placing a large order for SS hinges.",
-    readTime: "3 min read",
-  },
-  {
-    date: "December 15, 2025",
-    category: "Industry",
-    title: "Cabinet Hardware Trends for 2026: What Interior Designers Are Specifying",
-    excerpt: "From matte black to antique gold, cabinet handle finishes are shifting. We explore the dominant trends shaping interior hardware specifications this year.",
-    readTime: "4 min read",
-  },
-  {
-    date: "November 28, 2025",
-    category: "Company",
-    title: "BluBox Exports Marks 13 Years of Manufacturing Excellence",
-    excerpt: "From a small retail outlet in Chennai to an international hardware exporter — we look back at our journey and what continues to drive us forward.",
-    readTime: "3 min read",
-  },
-];
+import { Calendar, ArrowRight, Clock } from "lucide-react";
+import { BLOGS } from "@/data/blogs";
 
 export default function Blog() {
+  const [featured, ...rest] = BLOGS;
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -80,17 +38,74 @@ export default function Blog() {
         </div>
       </div>
 
+      {/* Featured Post */}
+      {featured && (
+        <section className="bg-industrial-grey py-12">
+          <div className="max-w-7xl mx-auto px-6">
+            <Link
+              to={`/blog/${featured.slug}`}
+              className="group grid grid-cols-1 lg:grid-cols-2 bg-white border border-border-subtle shadow-card hover:border-gold transition-colors duration-250 overflow-hidden"
+            >
+              <div className="aspect-[16/10] lg:aspect-auto overflow-hidden">
+                <img
+                  src={featured.cover}
+                  alt={featured.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="bg-gold text-navy px-2.5 py-1 font-body font-bold uppercase tracking-widest text-[10px]">
+                    Featured
+                  </span>
+                  <span className="font-body font-bold uppercase tracking-widest text-[10px] text-foreground/50">
+                    {featured.category}
+                  </span>
+                </div>
+                <h2 className="font-display text-2xl md:text-4xl font-semibold text-navy leading-tight mb-4 group-hover:text-gold transition-colors">
+                  {featured.title}
+                </h2>
+                <p className="font-body text-foreground/70 leading-relaxed mb-6">
+                  {featured.excerpt}
+                </p>
+                <div className="flex items-center gap-4 text-foreground/50 font-body text-xs uppercase tracking-widest mb-6">
+                  <span className="flex items-center gap-1.5"><Calendar size={11} />{featured.date}</span>
+                  <span className="flex items-center gap-1.5"><Clock size={11} />{featured.readTime}</span>
+                </div>
+                <span className="inline-flex items-center gap-2 font-body font-bold uppercase tracking-widest text-[10px] text-navy border-b border-navy pb-0.5 w-fit group-hover:text-gold group-hover:border-gold transition-colors">
+                  Read Article <ArrowRight size={11} />
+                </span>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Blog Grid */}
-      <section className="py-[8vh] bg-industrial-grey">
+      <section className="py-[8vh] bg-white">
         <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-10">
+            <div className="section-label text-gold mb-2">Latest Articles</div>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy">
+              Browse All Insights
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {BLOGS.map((blog, i) => (
-              <article
-                key={i}
-                className="bg-white border border-border-subtle shadow-card hover:border-gold transition-colors duration-250 animate-slide-up flex flex-col"
+            {rest.map((blog, i) => (
+              <Link
+                to={`/blog/${blog.slug}`}
+                key={blog.slug}
+                className="group bg-white border border-border-subtle shadow-card hover:border-gold transition-colors duration-250 animate-slide-up flex flex-col"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
-                {/* Category Bar */}
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={blog.cover}
+                    alt={blog.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <div className="bg-navy px-4 py-2">
                   <span className="font-body font-bold uppercase tracking-widest text-[10px] text-gold">{blog.category}</span>
                 </div>
@@ -103,7 +118,7 @@ export default function Blog() {
                     <span>{blog.readTime}</span>
                   </div>
 
-                  <h2 className="font-display text-xl font-semibold text-navy leading-tight mb-3">
+                  <h2 className="font-display text-xl font-semibold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
                     {blog.title}
                   </h2>
 
@@ -111,12 +126,12 @@ export default function Blog() {
                     {blog.excerpt}
                   </p>
 
-                  <button className="flex items-center gap-2 font-body font-bold uppercase tracking-widest text-[10px] text-navy border-b border-navy pb-0.5 w-fit hover:text-gold hover:border-gold transition-colors duration-200">
+                  <span className="flex items-center gap-2 font-body font-bold uppercase tracking-widest text-[10px] text-navy border-b border-navy pb-0.5 w-fit group-hover:text-gold group-hover:border-gold transition-colors duration-200">
                     Read More
                     <ArrowRight size={11} />
-                  </button>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
