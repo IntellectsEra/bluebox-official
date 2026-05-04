@@ -57,7 +57,7 @@ export default function Gallery() {
       </div>
 
       {/* ─── Filter Bar ─────────────────────────────────────── */}
-      <section className="bg-white border-b border-border-subtle sticky top-[104px] z-30">
+      {/* <section className="bg-white border-b border-border-subtle sticky top-[104px] z-30">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-2">
           {CATEGORIES_MAIN.map((cat) => {
             const isActive = active === cat.value;
@@ -77,46 +77,47 @@ export default function Gallery() {
             );
           })}
         </div>
-      </section>
+      </section> */}
 
       {/* ─── Masonry Gallery ────────────────────────────────── */}
       <section className="py-[6vh] bg-industrial-grey">
         <div className="max-w-7xl mx-auto px-6">
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
             {visible.map((item, i) => (
-              <button
-                key={i}
-                onClick={() => setLightbox(item)}
-                className="group relative block w-full mb-5 break-inside-avoid overflow-hidden border border-border-subtle bg-white hover:border-gold transition-colors duration-300 animate-slide-up text-left"
-                style={{ animationDelay: `${(i % 6) * 60}ms` }}
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={item.images[item.images.length - 1]}
-                    alt={item.name}
-                    loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                  <div className="font-body uppercase tracking-widest text-[9px] text-gold font-bold mb-1">
-                    {item.category}
+              <Link to={`/products/${item.id}`}>
+                <button
+                  key={i}
+                  className="group relative block w-full mb-5 break-inside-avoid overflow-hidden border border-border-subtle bg-white hover:border-gold transition-colors duration-300 animate-slide-up text-left"
+                  style={{ animationDelay: `${(i % 6) * 60}ms` }}
+                >
+                  <div className="overflow-hidden">
+                    <img
+                      src={item.images[item.images.length - 1]}
+                      alt={item.name}
+                      loading="lazy"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
-                  <div className="font-display text-xl text-white font-semibold leading-tight">
-                    {item.name}
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+                    <div className="font-body uppercase tracking-widest text-[9px] text-gold font-bold mb-1">
+                      {item.category}
+                    </div>
+                    <div className="font-display text-xl text-white font-semibold leading-tight">
+                      {item.name}
+                    </div>
                   </div>
-                </div>
-                {/* Static caption */}
-                <div className="px-5 py-4 border-t border-border-subtle group-hover:border-gold/30 transition-colors">
-                  <div className="font-body uppercase tracking-widest text-[9px] text-gold font-bold mb-1">
-                    {item.category}
+                  {/* Static caption */}
+                  <div className="px-5 py-4 border-t border-border-subtle group-hover:border-gold/30 transition-colors">
+                    <div className="font-body uppercase tracking-widest text-[9px] text-gold font-bold mb-1">
+                      {item.category}
+                    </div>
+                    <div className="font-display text-base text-navy font-semibold">
+                      {item.name}
+                    </div>
                   </div>
-                  <div className="font-display text-base text-navy font-semibold">
-                    {item.name}
-                  </div>
-                </div>
-              </button>
+                </button>
+              </Link>
             ))}
           </div>
 
