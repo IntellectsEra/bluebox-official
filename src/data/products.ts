@@ -323,7 +323,7 @@ export const products: Product[] = [
       "/products/22-4.jpg",
     ],
     pdf: "/documents/BBX-010.pdf",
-    category: "door-handles",
+    category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass / Zinc Alloy" },
       { label: "Finish", value: "Polished / Satin / Antique Gold / Chrome" },
@@ -349,7 +349,7 @@ export const products: Product[] = [
       "/products/23-4.jpg",
     ],
     pdf: "/documents/BBX-011.pdf",
-    category: "door-handles",
+    category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass / Zinc Alloy" },
       { label: "Finish", value: "Polished / Satin / Antique Gold / Chrome" },
@@ -375,7 +375,7 @@ export const products: Product[] = [
       "/products/1-4.jpg",
     ],
     pdf: "/documents/BBX-012.pdf",
-    category: "other",
+    category: "mortise-lock",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
       { label: "Grade", value: "SS 304 / Brass" },
@@ -402,7 +402,7 @@ export const products: Product[] = [
       "/products/13-4.jpg",
     ],
     pdf: "/documents/BBX-013.pdf",
-    category: "other",
+    category: "mortise-lock",
     specs: [
       { label: "Material", value: "Brass / Stainless Steel" },
       { label: "Finish", value: "Satin / Polished / Nickel Plated" },
@@ -425,7 +425,7 @@ export const products: Product[] = [
       "/products/19-4.jpg",
     ],
     pdf: "/documents/BBX-014.pdf",
-    category: "other",
+    category: "mortise-lock",
     specs: [
       { label: "Material", value: "Brass / Stainless Steel" },
       { label: "Finish", value: "Satin / Polished / Nickel Plated" },
