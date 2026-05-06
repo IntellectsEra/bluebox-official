@@ -10,19 +10,29 @@ const QUICK_LINKS = [
   { label: "Contact Us", href: "/contact" },
 ];
 
+// const PRODUCT_LINKS = [
+//   "SS Hinges (Premium / Welded)",
+//   "Door Handles",
+//   "Door Chain",
+//   "Door Stoppers",
+//   "Aldrops",
+//   "Tower Bolts",
+//   "Mortise Locks",
+//   "Cabinet Handles",
+//   "Knobs",
+//   "Sofa Legs",
+//   "Castor Wheels",
+//   "SS Kitchen Baskets",
+// ];
+
 const PRODUCT_LINKS = [
-  "SS Hinges (Premium / Welded)",
-  "Door Handles",
-  "Door Chain",
-  "Door Stoppers",
-  "Aldrops",
-  "Tower Bolts",
+  "Hinges",
   "Mortise Locks",
-  "Cabinet Handles",
-  "Knobs",
-  "Sofa Legs",
-  "Castor Wheels",
-  "SS Kitchen Baskets",
+  "Door Stoppers",
+  "Tower Bolts",
+  "Glass Fittings",
+  "Door Handles",
+  "Castor Wheel",
 ];
 
 export default function Footer() {

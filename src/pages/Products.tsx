@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
-import { products, CATEGORIES, CATEGORIES_MAIN } from "@/data/products";
+import { products, CATEGORIES } from "@/data/products";
 import { Search, SlidersHorizontal } from "lucide-react";
 import productsBannerImg from "/main/products.jpeg";
 
@@ -89,7 +89,7 @@ export default function Products() {
             </div> */}
             {/* Category Filters */}
             <div className="flex flex-wrap gap-2">
-              {CATEGORIES_MAIN.map((cat) => (
+              {CATEGORIES.map((cat) => (
                 <button
                   key={cat.value}
                   onClick={() => setCategory(cat.value)}

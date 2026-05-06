@@ -11,26 +11,21 @@ export interface Product {
     | "door-handles"
     | "cabinet-handles"
     | "mortise-lock"
-    | "tower-bolt"
-    | "glass-fittings"
-    | "door-handles"
-    | "castor-wheel"
-    | "door-stoppers"
     | "other";
   specs: { label: string; value: string }[];
   gallery?: string[];
 }
 
-// export const CATEGORIES = [
-//   { value: "all", label: "All Products" },
-//   { value: "hinges", label: "Hinges" },
-//   { value: "door-handles", label: "Door Handles" },
-//   { value: "cabinet-handles", label: "Cabinet Handles" },
-//   { value: "mortise-lock", label: "Mortise Locks" },
-//   { value: "other", label: "Others" },
-// ];
-
 export const CATEGORIES = [
+  { value: "all", label: "All Products" },
+  { value: "hinges", label: "Hinges" },
+  { value: "door-handles", label: "Door Handles" },
+  { value: "cabinet-handles", label: "Cabinet Handles" },
+  { value: "mortise-lock", label: "Mortise Locks" },
+  { value: "other", label: "Others" },
+];
+
+export const SUB_CATEGORIES = [
   { value: "all", label: "All Products" },
   { value: "hinges", label: "Hinges" },
   { value: "mortise-lock", label: "Mortise Locks" },
@@ -449,7 +444,7 @@ export const products: Product[] = [
       "/products/7-5.jpg",
     ],
     pdf: "/documents/BBX-015.pdf",
-    category: "door-stoppers",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel + Rubber Tip" },
       { label: "Grade", value: "SS 202 / SS 304" },
@@ -472,7 +467,7 @@ export const products: Product[] = [
       "/products/14-4.jpg",
     ],
     pdf: "/documents/BBX-016.pdf",
-    category: "door-stoppers",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel + Rubber Tip" },
       { label: "Grade", value: "SS 202 / SS 304" },
@@ -495,7 +490,7 @@ export const products: Product[] = [
       "/products/16-4.jpg",
     ],
     pdf: "/documents/BBX-017.pdf",
-    category: "tower-bolt",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Brass" },
       { label: "Grade", value: "SS 304 / SS 202" },
@@ -519,7 +514,7 @@ export const products: Product[] = [
       "/products/9-4.jpg",
     ],
     pdf: "/documents/BBX-018.pdf",
-    category: "glass-fittings",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
       { label: "Grade", value: "SS 304 / SS 202" },
@@ -546,7 +541,7 @@ export const products: Product[] = [
       "/products/11-5.jpg",
     ],
     pdf: "/documents/BBX-019.pdf",
-    category: "glass-fittings",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
       { label: "Grade", value: "SS 304" },
@@ -574,7 +569,7 @@ export const products: Product[] = [
       "/products/8-5.jpg",
     ],
     pdf: "/documents/BBX-020.pdf",
-    category: "glass-fittings",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
       { label: "Grade", value: "SS 304" },
@@ -602,7 +597,7 @@ export const products: Product[] = [
       "/products/3-5.jpg",
     ],
     pdf: "/documents/BBX-021.pdf",
-    category: "glass-fittings",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel" },
       { label: "Grade", value: "SS 304 / SS 202" },
@@ -658,7 +653,7 @@ export const products: Product[] = [
       "/products/10-6.jpg",
     ],
     pdf: "/documents/BBX-023.pdf",
-    category: "castor-wheel",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Rubber Wheel" },
       { label: "Type", value: "Swivel / Fixed" },
@@ -684,7 +679,7 @@ export const products: Product[] = [
       "/products/20-4.jpg",
     ],
     pdf: "/documents/BBX-024.pdf",
-    category: "castor-wheel",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Chrome Steel Ball" },
       { label: "Type", value: "Ball Swivel" },
@@ -711,7 +706,7 @@ export const products: Product[] = [
       "/products/24-5.jpg",
     ],
     pdf: "/documents/BBX-025.pdf",
-    category: "castor-wheel",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Rubber Wheel" },
       { label: "Type", value: "Fixed (Non-Swivel)" },
@@ -737,7 +732,7 @@ export const products: Product[] = [
       "/products/12-4.jpg",
     ],
     pdf: "/documents/BBX-026.pdf",
-    category: "castor-wheel",
+    category: "other",
     specs: [
       { label: "Material", value: "Stainless Steel / Rubber Wheel" },
       { label: "Type", value: "Swivel / Fixed" },
