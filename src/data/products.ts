@@ -39,7 +39,7 @@ export const CATEGORIES = [
   { value: "glass-fittings", label: "Glass Fittings" },
   { value: "door-handles", label: "Door Handles" },
   { value: "castor-wheel", label: "Castor Wheel" },
-  { value: "other", label: "Others" },
+  // { value: "other", label: "Others" },
 ];
 
 export const CATEGORIES_MAIN = [
