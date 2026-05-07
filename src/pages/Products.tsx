@@ -36,7 +36,7 @@ export default function Products() {
 
   const setCategory = (cat: string) => {
     if (cat === "all") {
-      navigate("/products");
+      navigate("/products/all");
     } else {
       navigate(`/products/${cat}`);
     }
