@@ -26,13 +26,13 @@ const QUICK_LINKS = [
 // ];
 
 const PRODUCT_LINKS = [
-  "Hinges",
-  "Mortise Locks",
-  "Door Stoppers",
-  "Tower Bolts",
-  "Glass Fittings",
-  "Door Handles",
-  "Castor Wheel",
+  { value: "hinges", label: "Hinges" },
+  { value: "mortise-lock", label: "Mortise Locks" },
+  { value: "door-stoppers", label: "Door Stoppers" },
+  { value: "tower-bolt", label: "Tower Bolt" },
+  { value: "glass-fittings", label: "Glass Fittings" },
+  { value: "door-handles", label: "Door Handles" },
+  { value: "castor-wheel", label: "Castor Wheel" },
 ];
 
 export default function Footer() {
@@ -107,13 +107,16 @@ export default function Footer() {
             </h4>
             <ul className="grid grid-col-1 lg:grid-cols-2 items-center space-y-2.5">
               {PRODUCT_LINKS.map((product) => (
-                <li key={product}>
+                <li key={product.value}>
                   <Link
-                    to="/products"
+                    to={`/products/${product.value}`}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     className="flex items-center gap-2 text-white/70 hover:text-gold transition-colors duration-200 font-body text-sm"
                   >
                     <ArrowRight size={11} className="text-gold shrink-0" />
-                    {product}
+                    {product.label}
                   </Link>
                 </li>
               ))}

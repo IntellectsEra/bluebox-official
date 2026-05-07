@@ -84,7 +84,7 @@ export default function Gallery() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
             {visible.map((item, i) => (
-              <Link to={`/products/${item.id}`}>
+              <Link to={`/products/info/${item.id}`}>
                 <button
                   key={i}
                   className="group relative block w-full mb-5 break-inside-avoid overflow-hidden border border-border-subtle bg-white hover:border-gold transition-colors duration-300 animate-slide-up text-left"

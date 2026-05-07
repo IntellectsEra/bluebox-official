@@ -5,7 +5,7 @@ import { Phone, Mail, Download, Menu, X, ChevronDown } from "lucide-react";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Our Products", href: "/products" },
+  { label: "Our Products", href: "/products/all" },
   { label: "Gallery", href: "/gallery" },
   { label: "Blogs", href: "/blog" },
   { label: "Contact Us", href: "/contact" },

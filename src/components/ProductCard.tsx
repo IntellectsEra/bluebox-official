@@ -20,7 +20,7 @@ export default function ProductCard({
   category,
 }: ProductCardProps) {
   return (
-    <Link to={`/products/${id}`}>
+    <Link to={`/products/info/${id}`}>
       <div className="product-card group flex flex-col h-full">
         {/* Image */}
         <div
@@ -56,7 +56,7 @@ export default function ProductCard({
           </p>
           <div className="flex gap-2 mt-auto">
             <Link
-              to={`/products/${id}`}
+              to={`/products/info/${id}`}
               className="flex items-center gap-1.5 flex-1 justify-center btn-primary text-[11px] py-2 px-3"
             >
               <ArrowRight size={12} />
