@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Mail, Download, Menu, X, ChevronDown } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Download,
+  Menu,
+  X,
+  ChevronDown,
+  MessageCircle,
+} from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -27,6 +35,15 @@ export default function Header() {
             >
               <Phone size={12} />
               <span>+91 98844 11134</span>
+            </a>
+            <a
+              href="https://wa.me/9884011311?text=Hi, I want to enquire about your hardware products. Please share details and prices."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-gold transition-colors duration-200 font-body tracking-wide"
+            >
+              <MessageCircle size={12} />
+              <span>+91 98840 11311</span>
             </a>
             <a
               href="mailto:enquiry@bluboxexports.com"
