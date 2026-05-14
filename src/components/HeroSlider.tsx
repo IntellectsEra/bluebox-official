@@ -13,7 +13,7 @@ const SLIDES = [
     headline: "Strong Grip,\nLasting Style",
     subline: "Handles that Blend Design and Strength",
     cta: "Explore Products",
-    href: "/products",
+    href: "/products/all",
   },
   {
     image: hero2,
@@ -21,7 +21,7 @@ const SLIDES = [
     headline: "The Standard of\nArchitectural Hardware",
     subline: "SS Hinges, Locks & Fittings — Engineered for Excellence",
     cta: "View Catalogue",
-    href: "/products",
+    href: "/products/all",
   },
   {
     image: hero3,

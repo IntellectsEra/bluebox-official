@@ -5,7 +5,13 @@ import Testimonials from "@/components/Testimonials";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { Link } from "react-router-dom";
-import { Shield, Package, Truck, HeartHandshake, ArrowRight } from "lucide-react";
+import {
+  Shield,
+  Package,
+  Truck,
+  HeartHandshake,
+  ArrowRight,
+} from "lucide-react";
 import whyChooseImg from "@/assets/why-choose-img.jpg";
 import productsBannerImg from "@/assets/products-banner.jpg";
 import factoryFloorImg from "@/assets/factory-floor.jpg";
@@ -41,7 +47,6 @@ const CATEGORY_LINKS = [
   { name: "Door Handles", href: "/products?category=door-handles" },
   { name: "Castor Wheels", href: "/products?category=other" },
   { name: "Glass Fittings", href: "/products?category=other" },
-  
 ];
 
 export default function Index() {
@@ -57,7 +62,10 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left: Image */}
-            <div className="relative overflow-hidden" style={{ minHeight: "300px" }}>
+            <div
+              className="relative overflow-hidden"
+              style={{ minHeight: "300px" }}
+            >
               <img
                 src={whyChooseImg}
                 alt="Premium door hardware installed in luxury interior"
@@ -74,8 +82,12 @@ export default function Index() {
                     { value: "1000+", label: "Happy Clients" },
                   ].map((s, i) => (
                     <div key={i} className="text-center">
-                      <div className="font-display text-2xl font-bold text-gold leading-none">{s.value}</div>
-                      <div className="font-body uppercase tracking-widest text-[9px] font-bold text-white/60 mt-1">{s.label}</div>
+                      <div className="font-display text-2xl font-bold text-gold leading-none">
+                        {s.value}
+                      </div>
+                      <div className="font-body uppercase tracking-widest text-[9px] font-bold text-white/60 mt-1">
+                        {s.label}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -92,17 +104,31 @@ export default function Index() {
               </h2>
               <div className="w-14 h-0.5 bg-gold mb-6"></div>
               <p className="font-body text-foreground/75 leading-relaxed mb-5">
-                Our workspaces are crafted for those who value sophistication, comfort, and excellence. Every detail is designed to deliver a premium experience — elegant interiors, seamless services, and world-class facilities that elevate the way you work.
+                Our workspaces are crafted for those who value sophistication,
+                comfort, and excellence. Every detail is designed to deliver a
+                premium experience — elegant interiors, seamless services, and
+                world-class facilities that elevate the way you work.
               </p>
               <p className="font-body text-foreground/75 leading-relaxed mb-8">
-                We redefine premium by offering exceptional quality at an accessible price, ensuring you enjoy exclusivity without compromise. With a curated selection of distinctive hardware options, we empower you to express your style and professional identity.
+                We redefine premium by offering exceptional quality at an
+                accessible price, ensuring you enjoy exclusivity without
+                compromise. With a curated selection of distinctive hardware
+                options, we empower you to express your style and professional
+                identity.
               </p>
               {/* Stat: 1000+ clients */}
               <div className="flex items-center gap-4 mb-8 p-4 bg-industrial-grey border-l-4 border-gold">
-                <div className="font-display text-3xl font-bold text-navy">1000+</div>
-                <div className="font-body text-sm text-foreground/65 uppercase tracking-widest font-bold">Happy Clients Across India & Worldwide</div>
+                <div className="font-display text-3xl font-bold text-navy">
+                  1000+
+                </div>
+                <div className="font-body text-sm text-foreground/65 uppercase tracking-widest font-bold">
+                  Happy Clients Across India & Worldwide
+                </div>
               </div>
-              <Link to="/about" className="btn-primary text-sm inline-flex items-center gap-2 self-start">
+              <Link
+                to="/about"
+                className="btn-primary text-sm inline-flex items-center gap-2 self-start"
+              >
                 <ArrowRight size={14} />
                 More About Us
               </Link>
@@ -121,7 +147,9 @@ export default function Index() {
                 <span className="section-label text-gold">What We Offer</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-semibold text-white mb-3">
-                Engineered Elegance<br />You Can Feel
+                Engineered Elegance
+                <br />
+                You Can Feel
               </h2>
               <div className="w-14 h-0.5 bg-gold mb-10"></div>
 
@@ -135,15 +163,22 @@ export default function Index() {
                     <div className="w-10 h-10 bg-white/10 flex items-center justify-center mb-3">
                       {f.icon}
                     </div>
-                    <h3 className="font-body font-bold uppercase tracking-wide text-white text-sm mb-2">{f.title}</h3>
-                    <p className="font-body text-white/55 text-sm leading-relaxed">{f.desc}</p>
+                    <h3 className="font-body font-bold uppercase tracking-wide text-white text-sm mb-2">
+                      {f.title}
+                    </h3>
+                    <p className="font-body text-white/55 text-sm leading-relaxed">
+                      {f.desc}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right: Factory image */}
-            <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
+            <div
+              className="relative overflow-hidden"
+              style={{ minHeight: "520px" }}
+            >
               <img
                 src={factoryFloorImg}
                 alt="Hardware manufacturing factory floor with Indian workers"
@@ -151,10 +186,19 @@ export default function Index() {
                 style={{ minHeight: "520px", filter: "brightness(0.75)" }}
               />
               {/* Overlay stamp */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gold p-6 text-center" style={{ background: "rgba(11,31,58,0.75)" }}>
-                <div className="font-body uppercase tracking-[0.3em] text-gold text-[10px] font-bold mb-2">Made in India</div>
-                <div className="font-display text-3xl text-white font-semibold">Since 2012</div>
-                <div className="font-body uppercase tracking-[0.2em] text-white/60 text-[9px] mt-1">Chennai, Tamil Nadu</div>
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-gold p-6 text-center"
+                style={{ background: "rgba(11,31,58,0.75)" }}
+              >
+                <div className="font-body uppercase tracking-[0.3em] text-gold text-[10px] font-bold mb-2">
+                  Made in India
+                </div>
+                <div className="font-display text-3xl text-white font-semibold">
+                  Since 2012
+                </div>
+                <div className="font-body uppercase tracking-[0.2em] text-white/60 text-[9px] mt-1">
+                  Chennai, Tamil Nadu
+                </div>
               </div>
             </div>
           </div>
@@ -196,7 +240,10 @@ export default function Index() {
                 </Link>
               ))}
             </div>
-            <Link to="/products" className="btn-primary text-sm inline-flex items-center gap-2 shrink-0">
+            <Link
+              to="/products"
+              className="btn-primary text-sm inline-flex items-center gap-2 shrink-0"
+            >
               View All Products
               <ArrowRight size={14} />
             </Link>
