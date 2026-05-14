@@ -122,7 +122,7 @@ export default function HeroSlider() {
                   {slide.cta}
                 </Link>
                 <a
-                  href="https://wa.me/919884411134?text=Hi, I want to enquire about your hardware products. Please share details and prices."
+                  href="https://wa.me/9884011311?text=Hi, I want to enquire about your hardware products. Please share details and prices."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-gold text-sm"

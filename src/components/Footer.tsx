@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, MessageCircle } from "lucide-react";
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
@@ -69,6 +69,15 @@ export default function Footer() {
               >
                 <Phone size={13} className="text-gold shrink-0" />
                 +91 98844 11134
+              </a>
+              <a
+                href="https://wa.me/9884011311?text=Hi, I want to enquire about your hardware products. Please share details and prices."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-white/70 hover:text-gold transition-colors duration-200 font-body"
+              >
+                <MessageCircle size={13} className="text-gold shrink-0" />
+                +91 98840 11311
               </a>
               <a
                 href="mailto:enquiry@bluboxexports.com"

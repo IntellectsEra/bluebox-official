@@ -63,7 +63,7 @@ export default function ProductCard({
               Know More
             </Link>
             <Link
-              to={`/contact?product=${encodeURIComponent(name)}`}
+              to={`/contact?product=${encodeURIComponent(refNo)}`}
               className="flex items-center gap-1.5 flex-1 justify-center btn-outline text-[11px] py-2 px-3"
             >
               <MessageSquare size={12} />
