@@ -142,7 +142,7 @@ export default function Gallery() {
             Inspired by what you see?
           </div>
           <h2 className="font-display text-3xl md:text-4xl text-white font-semibold mb-4">
-            Explore the Full Catalogue
+            Explore the Full Gallery
           </h2>
           <p className="font-body text-white/70 max-w-2xl mx-auto mb-8 text-[15px] leading-relaxed">
             From premium SS hinges to modular kitchen baskets — discover
@@ -150,7 +150,7 @@ export default function Gallery() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              to="/products"
+              to="/products/all"
               className="btn-gold text-sm inline-flex items-center gap-2"
             >
               View All Products <ArrowRight size={14} />

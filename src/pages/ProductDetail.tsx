@@ -21,7 +21,7 @@ export default function ProductDetail() {
           <h1 className="font-display text-5xl text-navy mb-4">
             Product Not Found
           </h1>
-          <Link to="/products" className="btn-primary text-sm">
+          <Link to="/products/all" className="btn-primary text-sm">
             Back to Products
           </Link>
         </div>
@@ -51,7 +51,7 @@ export default function ProductDetail() {
               Home
             </Link>
             <ChevronRight size={10} />
-            <Link to="/products" className="hover:text-gold transition-colors">
+            <Link to="/products/all" className="hover:text-gold transition-colors">
               Products
             </Link>
             <ChevronRight size={10} />
@@ -216,7 +216,7 @@ export default function ProductDetail() {
               </h2>
             </div>
             <Link
-              to="/products"
+              to="/products/all"
               className="btn-outline text-xs py-2.5 px-5 hidden sm:block"
             >
               View All

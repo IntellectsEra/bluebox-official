@@ -241,7 +241,7 @@ export default function Index() {
               ))}
             </div>
             <Link
-              to="/products"
+              to="/products/all"
               className="btn-primary text-sm inline-flex items-center gap-2 shrink-0"
             >
               View All Products

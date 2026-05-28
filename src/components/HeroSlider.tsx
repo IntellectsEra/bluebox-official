@@ -20,7 +20,7 @@ const SLIDES = [
     label: "Premium Hardware",
     headline: "The Standard of\nArchitectural Hardware",
     subline: "SS Hinges, Locks & Fittings — Engineered for Excellence",
-    cta: "View Catalogue",
+    cta: "View Gallery",
     href: "/products/all",
   },
   {

@@ -125,7 +125,7 @@ export default function AboutUs() {
           <div className="grid grid-cols-2 gap-4 animate-slide-up animate-slide-up-delay-2">
             {[
               { value: "12+", label: "Years of Experience" },
-              { value: "500+", label: "Products in Catalogue" },
+              { value: "500+", label: "Products in Gallery" },
               { value: "5+", label: "Export Destinations" },
               { value: "1000+", label: "Happy Clients" },
             ].map((stat, i) => (
