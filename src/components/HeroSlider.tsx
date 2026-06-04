@@ -21,7 +21,7 @@ const SLIDES = [
     headline: "The Standard of\nArchitectural Hardware",
     subline: "SS Hinges, Locks & Fittings — Engineered for Excellence",
     cta: "View Gallery",
-    href: "/products/all",
+    href: "/gallery",
   },
   {
     image: hero3,

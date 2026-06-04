@@ -30,7 +30,6 @@ export default function ProductDetail() {
     );
   }
 
-
   const related = products
     .filter((p) => p.id !== product.id && p.category === product.category)
     .slice(0, 4);
@@ -51,7 +50,10 @@ export default function ProductDetail() {
               Home
             </Link>
             <ChevronRight size={10} />
-            <Link to="/products/all" className="hover:text-gold transition-colors">
+            <Link
+              to="/products/all"
+              className="hover:text-gold transition-colors"
+            >
               Products
             </Link>
             <ChevronRight size={10} />
@@ -137,7 +139,7 @@ export default function ProductDetail() {
                   Download Brochure
                 </a>
                 <Link
-                  to={`/contact?product=${encodeURIComponent(product.name)}`}
+                  to={`/contact?product=${encodeURIComponent(product.refNo)}`}
                   className="btn-outline text-sm inline-flex items-center gap-2"
                 >
                   <MessageSquare size={14} />
