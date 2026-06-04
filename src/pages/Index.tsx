@@ -42,11 +42,11 @@ const FEATURES = [
 const HOME_PRODUCTS = products.slice(0, 6);
 
 const CATEGORY_LINKS = [
-  { name: "SS Hinges", href: "/products?category=hinges" },
-  { name: "Mortise Locks", href: "/products?category=mortise-lock" },
-  { name: "Door Handles", href: "/products?category=door-handles" },
-  { name: "Castor Wheels", href: "/products?category=other" },
-  { name: "Glass Fittings", href: "/products?category=other" },
+  { name: "SS Hinges", href: "/products/hinges" },
+  { name: "Mortise Locks", href: "/products/mortise-lock" },
+  { name: "Door Handles", href: "/products/door-handles" },
+  { name: "Castor Wheels", href: "/products/castor-wheel" },
+  { name: "Glass Fittings", href: "/products/glass-fittings" },
 ];
 
 export default function Index() {
